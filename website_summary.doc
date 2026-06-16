@@ -1,0 +1,206 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <meta charset="utf-8">
+    <title>สรุปโครงสร้างเว็บไซต์ Panco</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>100</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Prompt', 'Cordia New', 'Arial', sans-serif;
+            font-size: 11.5pt;
+            color: #1E293B;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #0099CC;
+            font-size: 16pt;
+            border-bottom: 2px solid #09C0EA;
+            padding-bottom: 4px;
+            margin-top: 22pt;
+            margin-bottom: 10pt;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 20pt;
+            text-align: center;
+            color: #1E293B;
+            margin-top: 10pt;
+            margin-bottom: 5pt;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 13pt;
+            text-align: center;
+            color: #64748B;
+            font-style: italic;
+            margin-bottom: 20pt;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20pt;
+        }
+        th {
+            background-color: #09C0EA;
+            color: #1E293B;
+            font-weight: bold;
+            text-align: left;
+            padding: 8px 12px;
+            border: 1px solid #CBD5E1;
+            font-size: 12pt;
+        }
+        td {
+            padding: 8px 12px;
+            border: 1px solid #CBD5E1;
+            font-size: 11pt;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background-color: #F8FAFC;
+        }
+        .intro {
+            margin-bottom: 15pt;
+            font-size: 12pt;
+            background-color: #F1F5F9;
+            padding: 12px;
+            border-left: 4px solid #09C0EA;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>สรุปโครงสร้างและสัดส่วนเนื้อหาเว็บไซต์ Panco Prosperity Trade</h2>
+    <div class="subtitle">สรุปดราฟต์เว็บไซต์โครงร่าง (Wireframe) จำนวน 3 หน้าหลัก</div>
+    
+    <div class="intro">
+        เอกสารนี้สรุปโครงสร้างของเว็บไซต์ <strong>บริษัท แพนโก้ พรอสเพอริตี้ เทรด จำกัด</strong> (ดราฟต์รูปแบบโครงร่างเสมือนจริง) 
+        โดยใช้ธีมระบบสีตามคู่มืออัตลักษณ์องค์กร (CI) โทนสีหลัก <strong>#09C0EA</strong> (สีฟ้าสว่าง) และองค์ประกอบความน่าเชื่อถือตามมาตรฐาน E-E-A-T
+    </div>
+
+    <h1>1. หน้าแรก — wf-index.html</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%">ส่วนของหน้าเว็บ (Section)</th>
+                <th style="width: 70%">รายละเอียดและวัตถุประสงค์เนื้อหา</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Navbar (แถบนำทาง)</strong></td>
+                <td>ดีไซน์แบบ Glassmorphism สีฟ้า #09C0EA โปร่งแสง พร้อมลิงก์นำทางหลักและปุ่มลัด 'ขอใบเสนอราคา'</td>
+            </tr>
+            <tr>
+                <td><strong>Hero Banner (แบนเนอร์หลัก)</strong></td>
+                <td>แสดงสโลแกนนำเสนอขีดความสามารถพิเศษเครื่องลามิเนทหน้ากว้าง 80 นิ้ว กำลังผลิต 38,000 หลาต่อวัน พร้อมปุ่มลิงก์ด่วน</td>
+            </tr>
+            <tr>
+                <td><strong>Industries Section</strong></td>
+                <td>แสดง 4 อุตสาหกรรมเป้าหมายหลักในแบบการ์ดภาพ Dummy (รองเท้า, กระเป๋า, เฟอร์นิเจอร์, ยานยนต์)</td>
+            </tr>
+            <tr>
+                <td><strong>About Company</strong></td>
+                <td>สรุปข้อมูลบริษัท ประวัติก่อตั้งเมื่อ 14 มีนาคม 2544 ด้วยทุนจดทะเบียน 10 ล้านบาท</td>
+            </tr>
+            <tr>
+                <td><strong>Capabilities Section</strong></td>
+                <td>นำเสนอจุดเด่นทางเทคโนโลยีและการจัดการ เช่น ความเร็วผลิต, ขนาดเครื่องจักร, ใบรับรอง ISO และระบบสิ่งแวดล้อม</td>
+            </tr>
+            <tr>
+                <td><strong>Highlighted Materials</strong></td>
+                <td>กล่องสรุปรายการข้อมูลสินค้าที่มี 21 รายการ แบ่งตามหมวดหมู่ชัดเจนเพื่อการเลือกชมที่ง่าย</td>
+            </tr>
+            <tr>
+                <td><strong>More Industries Grid</strong></td>
+                <td>แสดงอุตสาหกรรมย่อยเพิ่มเติมที่ใช้วัสดุของบริษัท เช่น ของเล่น, ชุดชั้นใน, หมวกกันน็อค</td>
+            </tr>
+            <tr>
+                <td><strong>ISO CTA Bar</strong></td>
+                <td>แถบทองโดดเด่นแสดงเครื่องหมายรับรอง ISO 9001:2008 URS UKAS นำสายตาสู่การขอใบเสนอราคา</td>
+            </tr>
+            <tr>
+                <td><strong>Footer (ส่วนท้ายเว็บ)</strong></td>
+                <td>พื้นหลังสีแบรนด์ #09C0EA บรรจุเมนูหลัก ข้อมูลการติดต่อ แผนที่ และเครื่องหมายรับรองระบบคุณภาพ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>2. เกี่ยวกับเรา & สินค้า — wf-about.html</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%">ส่วนของหน้าเว็บ (Section)</th>
+                <th style="width: 70%">รายละเอียดและวัตถุประสงค์เนื้อหา</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Header Hero</strong></td>
+                <td>แบนเนอร์หัวข้อ 'เกี่ยวกับเรา' ประดับตราสัญลักษณ์รับรอง ISO 9001:2008 และป้ายกำกับประสบการณ์บริษัทกว่า 25 ปี</td>
+            </tr>
+            <tr>
+                <td><strong>EEAT Trust Bar</strong></td>
+                <td>แถบย่อระบุข้อมูลสถิติมั่นใจ เช่น กำลังการผลิตรวม, จุดเด่นเครื่อง 80 นิ้วรายเดียว และพิกัดโรงงาน</td>
+            </tr>
+            <tr>
+                <td><strong>Timeline ประวัติบริษัท</strong></td>
+                <td>เส้นสายประวัติบริษัทเชิงโต้ตอบ เริ่มตั้งแต่ปี 2544 (จดทะเบียนบริษัท), ปี 2545 (เพิ่มเครื่องจักรนำเข้า) และปี 2546 (ได้รับการรับรอง ISO)</td>
+            </tr>
+            <tr>
+                <td><strong>Bento Vision & Mission</strong></td>
+                <td>บอร์ดข้อมูลจัดแต่งสไตล์โมเดิร์นสรุปวิสัยทัศน์ พันธกิจ และเป้าหมายหลักขององค์กร</td>
+            </tr>
+            <tr>
+                <td><strong>Core Services</strong></td>
+                <td>แนะนำกลุ่มบริการหลักทั้ง 4 ด้านอย่างละเอียด (งานลามิเนต, งานสติ๊กเกอร์กาว, งานเคลือบผิววัสดุ และบริการตัดกึ่งสำเร็จรูป)</td>
+            </tr>
+            <tr>
+                <td><strong>Interactive Catalog</strong></td>
+                <td>ระบบจัดแคตตาล็อกสินค้า 21 รายการ พร้อมปุ่มตัวกรองประเภทสินค้าแบบเรียลไทม์ (ผ้าทั่วไป 8 ชนิด, โฟม & EVA 4 ชนิด, งานประกบกาว/เคลือบ 9 ชนิด)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>3. ติดต่อเรา — wf-products.html</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%">ส่วนของหน้าเว็บ (Section)</th>
+                <th style="width: 70%">รายละเอียดและวัตถุประสงค์เนื้อหา</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Page Header</strong></td>
+                <td>หัวเรื่องสีขาวบนพื้นหลังมืดของโรงงาน ระบุวันเวลาการเปิดให้บริการชัดเจน</td>
+            </tr>
+            <tr>
+                <td><strong>Contact Info Cards</strong></td>
+                <td>แสดงการ์ดข้อมูลติดต่อหลัก (ที่อยู่จัดส่ง, เบอร์โทรศัพท์โรงงาน, อีเมลแผนกขาย และสัญญาณไฟสว่างระบุสถานะทำการปัจจุบัน)</td>
+            </tr>
+            <tr>
+                <td><strong>Interactive Map</strong></td>
+                <td>ฝัง Google Maps ระบุที่ตั้งโรงงานหทัยราษฎร์ พร้อมปุ่มเปิดแอปนำทางภายนอก</td>
+            </tr>
+            <tr>
+                <td><strong>Inquiry Form</strong></td>
+                <td>แบบฟอร์มขอใบเสนอราคาระดับองค์กรที่กรอกรายละเอียดผู้ติดต่อ และหมวดหมู่สินค้าที่สนใจเพื่อติดต่อกลับภายใน 1 วัน</td>
+            </tr>
+            <tr>
+                <td><strong>Technical FAQ</strong></td>
+                <td>รวมคำถามพบบ่อยเชิงเทคนิคและการสั่งผลิต (หน้ากว้างวัสดุสูงสุด, ปริมาณสั่งซื้อขั้นต่ำ, ระบบรับรองมาตรฐานสากล)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
