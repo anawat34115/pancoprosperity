@@ -1,199 +1,597 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe - Products (products)</title>
+    <meta name="description" content="ติดต่อ Panco Prosperity Trade — แผนที่ โทรศัพท์ อีเมล แบบฟอร์มขอใบเสนอราคา และ FAQ">
+    <title>ติดต่อเรา — Panco Prosperity Trade</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        "brand-primary": "#00677c",
-                        "brand-primary-dark": "#001f27",
-                        "brand-gold": "#c3a247",
-                        "brand-surface": "#f5fafd",
-                        "brand-gray": "#e9eff1"
+                        "brand-primary": "#08B8E9",
+                        "brand-dark": "#0099CC",
+                        "brand-primary-dark": "#1E293B",
+                        "brand-gold": "#F0DA33",
+                        "brand-gold-light": "#FAF07A",
+                        "brand-surface": "#F8FAFC",
+                        "brand-gray": "#E2E8F0",
+                        "brand-accent": "#00A2E8",
+                        "eco-green": "#2d6a4f",
                     },
-                    fontFamily: { sans: ["Prompt", "sans-serif"] }
+                    fontFamily: { sans: ["Prompt", "sans-serif"] },
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Prompt', sans-serif; background-color: #f5fafd; color: #001f27; }
-        .wf-section-label { position: absolute; top: 0; left: 0; background-color: #c3a247; color: white; padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: bold; border-bottom-right-radius: 0.5rem; z-index: 10; }
-        .wf-placeholder-img { background-color: #e9eff1; border: 2px dashed #00b5d8; display: flex; align-items: center; justify-content: center; color: #00677c; font-weight: bold; }
+        body { font-family: 'Prompt', sans-serif; }
+
+        .nav-glass {
+            background: rgba(9, 192, 234, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.15);
+        }
+
+        .page-hero {
+            background-image:
+                linear-gradient(rgba(30,41,59,0.80), rgba(30,41,59,0.96)),
+                url('https://placehold.co/1920x1080/1e293b/08b8e9?text=Contact+Hero+Background');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reveal { opacity: 0; transform: translateY(25px); transition: all 0.65s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .card-lift { transition: all 0.3s ease; }
+        .card-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 35px -8px rgba(8,184,233,0.15); }
+
+        /* Map */
+        #map-frame { width: 100%; height: 450px; border: 0; border-radius: 1.5rem; filter: grayscale(15%); }
+
+        /* Form */
+        .form-input {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 0.875rem;
+            font-family: 'Prompt', sans-serif;
+            font-size: 0.95rem;
+            color: #1E293B;
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #08B8E9;
+            box-shadow: 0 0 0 3px rgba(8,184,233,0.12);
+        }
+        .form-input::placeholder { color: #9ca3af; }
+
+        select.form-input { appearance: none; cursor: pointer; }
+
+        /* FAQ */
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+        details[open] { background: #F8FAFC; }
+
+        /* Progress */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+            background: linear-gradient(90deg, #F0DA33, #08B8E9);
+            transition: width 0.1s;
+        }
+
+        /* Form submit animation */
+        .btn-submit { transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(240,218,51,0.4); }
+        .btn-submit:active { transform: translateY(0); }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-white text-brand-primary-dark">
 
-    <!-- Header Wireframe -->
-    <nav class="bg-brand-primary-dark text-white p-4 flex justify-between items-center sticky top-0 z-50">
-        <div class="font-bold text-xl">PANCO PROSPERITY TRADE LTD.</div>
-        <div class="hidden md:flex space-x-6">
-            <span class="text-gray-300">Home</span>
-            <span class="text-gray-300">About Us</span>
-            <span class="text-brand-gold border-b-2 border-brand-gold font-bold">Products</span>
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav-glass text-brand-primary-dark sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
+        <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
+            <div class="w-9 h-9 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-lg flex items-center justify-center font-black text-brand-primary-dark text-lg shadow-lg">P</div>
+            <div class="leading-tight">
+                <div class="font-bold text-sm tracking-wider text-brand-primary-dark">PANCO PROSPERITY</div>
+                <div class="text-[10px] text-brand-primary-dark/80 tracking-widest uppercase">Trade Limited</div>
+            </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="wf-index.html" class="text-brand-primary-dark/70 hover:text-brand-primary-dark text-sm font-medium transition-colors">หน้าแรก</a>
+            <a href="wf-about.html" class="text-brand-primary-dark/70 hover:text-brand-primary-dark text-sm font-medium transition-colors">เกี่ยวกับเรา &amp; สินค้า</a>
+            <a href="wf-products.html" class="text-brand-primary-dark font-bold text-sm border-b-2 border-brand-primary-dark pb-0.5">ติดต่อเรา</a>
+            <a href="#inquiry" class="bg-brand-primary-dark text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-brand-dark transition-all shadow-md">
+                ขอใบเสนอราคา
+            </a>
         </div>
-    </nav>
-
-    <!-- Section 1: Hero -->
-    <section class="relative h-64 bg-white border-b-4 border-brand-gray flex items-center justify-center text-center">
-        <div class="wf-section-label">Section 1: Hero</div>
-        <div class="pt-8">
-            <h1 class="text-4xl font-bold text-brand-primary-dark mb-4">Our Materials & Products</h1>
-            <p class="text-gray-500">รวมรวมวัสดุอุตสาหกรรมและบริการลามิเนตแบบครบวงจร</p>
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-black/5">
+            <svg class="w-6 h-6 text-brand-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 border-t border-brand-primary-dark/15 mt-1">
+        <div class="flex flex-col gap-3 pt-3">
+            <a href="wf-index.html" class="text-brand-primary-dark/70 text-sm font-medium">หน้าแรก</a>
+            <a href="wf-about.html" class="text-brand-primary-dark/70 text-sm font-medium">เกี่ยวกับเรา &amp; สินค้า</a>
+            <a href="wf-products.html" class="text-brand-primary-dark font-bold text-sm">ติดต่อเรา</a>
+            <a href="#inquiry" class="bg-brand-primary-dark text-white px-5 py-2 rounded-full text-sm font-bold text-center">ขอใบเสนอราคา</a>
         </div>
-    </section>
+    </div>
+</nav>
 
-    <!-- Section 2: Fabrics -->
-    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
-        <div class="wf-section-label">Section 2: Category - Standard Fabrics</div>
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center space-x-4 mb-12">
-                <div class="w-2 h-8 bg-brand-gold"></div>
-                <h2 class="text-3xl font-bold text-brand-primary-dark">หมวดผ้า (Standard Fabrics)</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Product Card Wireframes -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าวิซ่า (Visa)</h4></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าไฮเกรท (High-grade)</h4></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าทริคอต (Tricot)</h4></div>
-                </div>
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าทีคอต (TC)</h4></div>
-                </div>
-            </div>
+<!-- ═══════════════════════════════════════
+     S1: PAGE HEADER
+═══════════════════════════════════════ -->
+<section class="page-hero py-28 text-center relative">
+    <div class="max-w-3xl mx-auto px-4 relative z-10 reveal">
+        <p class="text-brand-gold text-sm font-bold tracking-widest uppercase mb-4">Contact Us</p>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-5">ติดต่อเรา</h1>
+        <p class="text-gray-300 text-lg">พร้อมให้คำปรึกษาและรับคำสั่งซื้อ<br>ทุกวันจันทร์–ศุกร์ เวลา 08:00–17:00 น.</p>
+        <div class="w-20 h-1 bg-brand-gold mx-auto mt-8 rounded-full"></div>
+        <!-- Breadcrumb -->
+        <div class="flex items-center justify-center gap-2 mt-6 text-sm text-gray-500">
+            <a href="wf-index.html" class="hover:text-brand-gold transition-colors">หน้าแรก</a>
+            <span class="text-gray-600">/</span>
+            <span class="text-brand-gold">ติดต่อเรา</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Section 3: Foams & EVA -->
-    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
-        <div class="wf-section-label">Section 3: Category - Foams & EVA</div>
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center space-x-4 mb-12">
-                <div class="w-2 h-8 bg-brand-primary"></div>
-                <h2 class="text-3xl font-bold text-brand-primary-dark">หมวดโฟมและอีวีเอ (Foams & EVA)</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Product Card Wireframes -->
-                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Foam</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">PE Foam</h4></div>
-                </div>
-                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Foam</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">PU Foam</h4></div>
-                </div>
-                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: EVA</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">EVA (อีวีเอ)</h4></div>
-                </div>
-                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fiber</div>
-                    <div class="p-4"><h4 class="font-bold text-brand-primary">ใย (Fiber)</h4></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Laminated & Services -->
-    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
-        <div class="wf-section-label">Section 4: Category - Laminated Products & Services</div>
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center space-x-4 mb-12">
-                <div class="w-2 h-8 bg-brand-primary-dark"></div>
-                <h2 class="text-3xl font-bold text-brand-primary-dark">วัสดุประกบและบริการอื่นๆ (Laminated & Services)</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Large Service Cards -->
-                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex items-center">
-                    <div class="wf-placeholder-img w-32 h-32 rounded mr-8">Image</div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-brand-primary-dark mb-2">PVC + PVC</h3>
-                        <p class="text-gray-600">ประกบฟองน้ำ หรือหนังเทียมเข้าด้วยกัน</p>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex items-center">
-                    <div class="wf-placeholder-img w-32 h-32 rounded mr-8">Image</div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-brand-primary-dark mb-2">บริการตัดม้วน/แผ่น</h3>
-                        <p class="text-gray-600">รับจ้างตัดวัสดุตามขนาดที่ลูกค้าต้องการ</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Lab Facility -->
-    <section class="relative py-0 bg-white border-b-4 border-brand-gray overflow-hidden">
-        <div class="wf-section-label">Section 5: Advanced Testing Facility</div>
-        <div class="flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 wf-placeholder-img min-h-[400px] border-none rounded-none">
-                Image: Advanced Laboratory Facility
-            </div>
-            <div class="w-full md:w-1/2 p-16 bg-brand-primary-dark text-white flex flex-col justify-center">
-                <h2 class="text-3xl font-bold mb-6 text-brand-gold">ห้องปฏิบัติการทดสอบภายใน</h2>
-                <p class="text-gray-300 mb-8 leading-relaxed">
-                    เรามีห้องปฏิบัติการที่ทันสมัยเพื่อทดสอบคุณภาพของวัสดุทุกชิ้น เพื่อให้แน่ใจว่าสินค้าได้มาตรฐานตามที่กำหนดไว้
+<!-- ═══════════════════════════════════════
+     S2: CONTACT INFORMATION
+═══════════════════════════════════════ -->
+<section class="py-16 bg-white" id="contact-info">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Address -->
+            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
+                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">📍</div>
+                <h3 class="font-bold text-brand-primary-dark mb-2">ที่อยู่</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    บริษัท แพนโก้ พรอสเพอริตี้ เทรด จำกัด<br>
+                    192 ถนนหทัยราษฎร์ แขวงบางชัน<br>
+                    เขตคลองสามวา กรุงเทพฯ 10510<br>
+                    <span class="text-gray-400 text-xs mt-1 block">192 Hathairaj Rd., Bangchan, Klongsamwa, Bangkok 10510</span>
                 </p>
-                <ul class="space-y-4 text-gray-300">
-                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ทดสอบแรงดึง (Tensile Testing)</li>
-                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ทดสอบการยึดเกาะ (Adhesion Testing)</li>
-                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ตรวจสอบความสม่ำเสมอของความหนา</li>
+            </div>
+
+            <!-- Phone -->
+            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
+                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">📞</div>
+                <h3 class="font-bold text-brand-primary-dark mb-2">โทรศัพท์</h3>
+                <a href="tel:026906-5335" class="text-brand-primary font-bold hover:underline">0-2906-5335-8</a>
+                <div class="mt-3 pt-3 border-t border-brand-gray">
+                    <div class="text-xs text-gray-500 mb-1">แฟ็กซ์</div>
+                    <div class="text-brand-primary-dark font-semibold">0-2906-5339</div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
+                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">✉️</div>
+                <h3 class="font-bold text-brand-primary-dark mb-2">อีเมล</h3>
+                <a href="mailto:panco192@hotmail.com" class="text-brand-primary font-semibold text-sm hover:underline break-all">
+                    panco192@hotmail.com
+                </a>
+                <div class="mt-3 pt-3 border-t border-brand-gray">
+                    <div class="text-xs text-gray-500">ตอบกลับภายใน 24 ชั่วโมงทำการ</div>
+                </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="bg-brand-primary-dark text-white rounded-2xl p-6 card-lift reveal border-l-4 border-brand-gold">
+                <div class="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-2xl mb-4">🕐</div>
+                <h3 class="font-bold mb-3 text-brand-gold">เวลาทำการ</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-300">จันทร์ – ศุกร์</span>
+                        <span class="text-white font-semibold">08:00 – 17:00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-300">เสาร์</span>
+                        <span class="text-gray-400">ปิดทำการ</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-300">อาทิตย์ / วันหยุด</span>
+                        <span class="text-gray-400">ปิดทำการ</span>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                    <span class="text-green-400 text-xs">เปิดทำการตอนนี้</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     S3: GOOGLE MAP
+═══════════════════════════════════════ -->
+<section class="py-6 bg-white" id="map">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+                <h2 class="text-xl font-bold text-brand-primary-dark">แผนที่ที่ตั้ง</h2>
+                <span class="text-xs bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full font-medium">192 ถ.หทัยราษฎร์ เขตคลองสามวา</span>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-gray">
+                <iframe
+                    id="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.7!2d100.8437!3d13.8218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s192+Hathairaj+Rd%2C+Bang+Chan%2C+Khlong+Sam+Wa%2C+Bangkok+10510!5e0!3m2!1sth!2sth!4v1234567890"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="แผนที่ Panco Prosperity Trade">
+                </iframe>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+                <a href="https://maps.google.com/?q=192+Hathairaj+Rd+Bang+Chan+Klongsamwa+Bangkok" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-brand-primary font-semibold hover:text-brand-gold transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    เปิด Google Maps
+                </a>
+                <span class="text-gray-400 text-sm">|</span>
+                <span class="text-sm text-gray-500">📌 192 ถนนหทัยราษฎร์ แขวงบางชัน เขตคลองสามวา กรุงเทพฯ 10510</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     S4: INQUIRY FORM
+═══════════════════════════════════════ -->
+<section class="py-20 bg-brand-surface" id="inquiry">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+            <!-- Left: Info panel -->
+            <div class="lg:col-span-2 reveal">
+                <p class="text-brand-primary text-sm font-bold tracking-widest uppercase mb-4">ส่งใบสอบถาม</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-primary-dark mb-6 leading-tight">
+                    แบบฟอร์ม<br>ขอใบเสนอราคา
+                </h2>
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    กรอกแบบฟอร์มด้านขวา แล้วทีมของเราจะติดต่อกลับ
+                    ภายใน <strong>1 วันทำการ</strong> เพื่อให้ข้อมูลสเปคสินค้า ราคา และข้อเสนอพิเศษ
+                </p>
+
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-brand-gold/20 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-gold font-black">1</div>
+                        <div>
+                            <div class="font-bold text-brand-primary-dark">กรอกข้อมูลบริษัทและความต้องการ</div>
+                            <div class="text-sm text-gray-500">ยิ่งละเอียด ยิ่งเสนอราคาได้ตรงกว่า</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-primary font-black">2</div>
+                        <div>
+                            <div class="font-bold text-brand-primary-dark">ทีมงานวิเคราะห์และเสนอราคา</div>
+                            <div class="text-sm text-gray-500">พร้อมให้คำแนะนำเลือกวัสดุที่เหมาะสม</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-eco-green/10 rounded-xl flex items-center justify-center flex-shrink-0 text-eco-green font-black">3</div>
+                        <div>
+                            <div class="font-bold text-brand-primary-dark">รับใบเสนอราคาภายใน 1 วันทำการ</div>
+                            <div class="text-sm text-gray-500">ทางอีเมลหรือโทรศัพท์ตามที่ระบุ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact quick links -->
+                <div class="mt-10 pt-8 border-t border-brand-gray">
+                    <p class="text-sm font-bold text-brand-primary-dark mb-4">หรือติดต่อด่วนผ่าน</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="tel:0290653358" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary transition-colors">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <div class="font-bold text-brand-primary-dark text-sm">โทรหาเราได้เลย</div>
+                                <div class="text-brand-primary text-sm">0-2906-5335-8</div>
+                            </div>
+                        </a>
+                        <a href="mailto:panco192@hotmail.com" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary transition-colors">
+                            <span class="text-xl">✉️</span>
+                            <div>
+                                <div class="font-bold text-brand-primary-dark text-sm">ส่งอีเมลตรง</div>
+                                <div class="text-brand-primary text-sm">panco192@hotmail.com</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="lg:col-span-3 reveal">
+                <div class="bg-white rounded-3xl shadow-xl border border-brand-gray p-8 sm:p-10">
+                    <h3 class="text-xl font-bold text-brand-primary-dark mb-6">รายละเอียดการสอบถาม</h3>
+                    <form id="inquiry-form" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-primary-dark mb-2">ชื่อบริษัท / องค์กร *</label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="บริษัท ABC จำกัด" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-primary-dark mb-2">ชื่อผู้ติดต่อ *</label>
+                                <input type="text" id="contact-name" name="contact_name" class="form-input" placeholder="คุณ..." required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-primary-dark mb-2">เบอร์โทรศัพท์ *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="08X-XXX-XXXX" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-primary-dark mb-2">อีเมล *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="example@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-brand-primary-dark mb-2">สินค้า / บริการที่สนใจ *</label>
+                            <select id="product-interest" name="product_interest" class="form-input" required>
+                                <option value="" disabled selected>เลือกประเภทสินค้า/บริการ</option>
+                                <optgroup label="บริการลามิเนท">
+                                    <option value="laminate-eva">ลามิเนท EVA / สปองค์ + ผ้า</option>
+                                    <option value="laminate-foam">ลามิเนทฟองน้ำ + ผ้า</option>
+                                    <option value="laminate-pvc">ลามิเนท PVC / PU</option>
+                                    <option value="coating-pu">เคลือบผิว PU</option>
+                                </optgroup>
+                                <optgroup label="สินค้าสติ๊กเกอร์">
+                                    <option value="sticker">กาวสติ๊กเกอร์ Adhesive</option>
+                                </optgroup>
+                                <optgroup label="วัสดุ (ซื้อ)">
+                                    <option value="fabric">ผ้า (วิซ่า / ไฮเกรท / ทรีคอต ฯลฯ)</option>
+                                    <option value="foam-eva">โฟม / EVA</option>
+                                </optgroup>
+                                <optgroup label="บริการอื่นๆ">
+                                    <option value="cutting">บริการตัด (ตรง / เฉลียง / รูดเส้น)</option>
+                                    <option value="other">อื่นๆ / ปรึกษาทั่วไป</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="block text-sm font-semibold text-brand-primary-dark mb-2">ปริมาณที่ต้องการ (โดยประมาณ)</label>
+                            <input type="text" id="quantity" name="quantity" class="form-input" placeholder="เช่น 5,000 หลา, 1,000 ม้วน">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-brand-primary-dark mb-2">รายละเอียดและความต้องการเพิ่มเติม</label>
+                            <textarea id="message" name="message" rows="4" class="form-input resize-none" placeholder="ระบุสเปคสินค้า สี ความหนา วัสดุที่ต้องการประกบ หรือคำถามอื่นๆ..."></textarea>
+                        </div>
+
+                        <!-- Privacy note -->
+                        <p class="text-xs text-gray-400 mb-6">
+                            * ข้อมูลของคุณจะถูกใช้เพื่อการติดต่อและเสนอราคาเท่านั้น ไม่มีการเผยแพร่ให้บุคคลภายนอก
+                        </p>
+
+                        <button type="submit" id="submit-btn" class="btn-submit w-full bg-brand-gold text-brand-primary-dark font-bold py-4 px-8 rounded-2xl text-lg shadow-lg">
+                            📋 ส่งใบสอบถาม / ขอใบเสนอราคา
+                        </button>
+                    </form>
+
+                    <!-- Success message (hidden by default) -->
+                    <div id="success-msg" class="hidden mt-6 bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-3">✅</div>
+                        <h4 class="font-bold text-green-800 text-lg mb-2">ส่งข้อมูลสำเร็จ!</h4>
+                        <p class="text-green-700 text-sm">ทีมงานของเราจะติดต่อกลับภายใน 1 วันทำการ<br>โทร: 0-2906-5335-8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     S5: FAQ
+═══════════════════════════════════════ -->
+<section class="py-20 bg-white" id="faq">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-brand-primary text-sm font-bold tracking-widest uppercase mb-3">FAQ</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-primary-dark">คำถามที่พบบ่อย</h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+            <!-- FAQ 1 -->
+            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q1</span>
+                        รับลามิเนทหน้ากว้างสูงสุดเท่าไหร่?
+                    </span>
+                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </summary>
+                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
+                    <p class="text-gray-600 leading-relaxed">
+                        เราสามารถลามิเนทได้หน้ากว้างสูงสุด <strong class="text-brand-primary">80 นิ้ว</strong>
+                        ซึ่งเป็นจุดเด่นพิเศษของ PANCO ที่ใช้เครื่องจักรนำเข้าพิเศษ
+                        ทำให้สามารถผลิตวัสดุหน้ากว้างขนาดใหญ่สำหรับอุตสาหกรรมเบาะรถยนต์
+                        เฟอร์นิเจอร์ และงานขนาดใหญ่อื่นๆ ได้โดยไม่มีรอยต่อ
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q2</span>
+                        มีบริการทำสติ๊กเกอร์หรือไม่?
+                    </span>
+                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </summary>
+                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
+                    <p class="text-gray-600 leading-relaxed">
+                        <strong class="text-brand-primary">มีครับ</strong> — เราพัฒนาเทคโนโลยีการผลิตกาวสติ๊กเกอร์ (Adhesive Sticker)
+                        เป็นผลสำเร็จตั้งแต่ <strong>สิงหาคม 2545</strong>
+                        โดยสามารถประกบกาวสติ๊กเกอร์บนวัสดุประเภท PVC, PU, ผ้า และฟอยล์
+                        เหมาะสำหรับการผลิตสินค้าที่ต้องการการยึดติดแบบพิเศษ
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q3</span>
+                        กำลังการผลิตต่อวันอยู่ที่เท่าไหร่?
+                    </span>
+                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </summary>
+                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
+                    <p class="text-gray-600 leading-relaxed">
+                        กำลังการผลิตสูงสุดของเราอยู่ที่ <strong class="text-brand-primary">38,000 หลา ต่อ 8 ชั่วโมง</strong>
+                        (เพิ่มขึ้นจาก 25,000 หลา หลังจากนำเข้าเครื่องจักรรุ่นใหม่ในปี 2545)
+                        ซึ่งเพียงพอต่อการรองรับคำสั่งซื้อขนาดใหญ่จากโรงงานอุตสาหกรรม
+                        สามารถแจ้งปริมาณที่ต้องการผ่านแบบฟอร์มด้านบน
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q4</span>
+                        มี MOQ (ปริมาณสั่งซื้อขั้นต่ำ) ไหม?
+                    </span>
+                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </summary>
+                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
+                    <p class="text-gray-600 leading-relaxed">
+                        MOQ ขึ้นอยู่กับประเภทสินค้าและวัสดุที่ต้องการ
+                        กรุณาติดต่อทีมงานโดยตรงผ่านแบบฟอร์มหรือโทรศัพท์
+                        เพื่อรับข้อมูลปริมาณขั้นต่ำและราคาที่เหมาะสมสำหรับออเดอร์ของคุณ
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 5 -->
+            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q5</span>
+                        สินค้าได้มาตรฐานอะไรบ้าง?
+                    </span>
+                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </summary>
+                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
+                    <p class="text-gray-600 leading-relaxed">
+                        บริษัทฯ ได้รับการรับรองมาตรฐาน <strong class="text-brand-primary">ISO 9001:2008</strong>
+                        จาก United Registrar of Systems (URS) ที่ได้รับการรับรองโดย <strong>UKAS</strong>
+                        (United Kingdom Accreditation Service) ตั้งแต่วันที่ 17 มกราคม 2546
+                        ซึ่งการันตีระบบบริหารคุณภาพที่ได้มาตรฐานสากล
+                    </p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#09C0EA] text-brand-primary-dark border-t border-brand-primary-dark/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-10 h-10 bg-brand-primary-dark text-white rounded-lg flex items-center justify-center font-black text-lg">P</div>
+                    <div>
+                        <div class="font-bold text-lg tracking-wide text-brand-primary-dark">PANCO PROSPERITY</div>
+                        <div class="text-xs text-brand-primary-dark/70 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>
+                    </div>
+                </div>
+                <p class="text-brand-primary-dark/80 leading-relaxed mb-6 max-w-sm text-sm">ผู้เชี่ยวชาญด้านการลามิเนทวัสดุอุตสาหกรรมหน้ากว้าง 80 นิ้ว มาตรฐาน ISO 9001:2008 URS UKAS กว่า 25 ปี</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="bg-brand-primary-dark/15 text-brand-primary-dark text-xs px-3 py-1 rounded-full border border-brand-primary-dark/25 font-bold">ISO 9001:2008</span>
+                    <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 text-brand-primary-dark/80">URS UKAS</span>
+                    <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 text-brand-primary-dark/80">ก่อตั้ง 2544</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-brand-primary-dark mb-5 text-xs uppercase tracking-wide">ลิงก์หลัก</h4>
+                <ul class="space-y-3 text-brand-primary-dark/80 text-sm">
+                    <li><a href="wf-index.html" class="hover:text-black font-semibold transition-colors">หน้าแรก</a></li>
+                    <li><a href="wf-about.html" class="hover:text-black font-semibold transition-colors">เกี่ยวกับเรา &amp; สินค้า</a></li>
+                    <li><a href="wf-about.html#catalog" class="hover:text-black font-semibold transition-colors">แคตตาล็อกสินค้า</a></li>
+                    <li><a href="wf-products.html" class="hover:text-black font-semibold transition-colors">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-brand-primary-dark mb-5 text-xs uppercase tracking-wide">ติดต่อเรา</h4>
+                <ul class="space-y-3 text-brand-primary-dark/80 text-sm">
+                    <li class="flex items-start gap-2"><span class="text-brand-primary-dark">📍</span><span>192 ถ.หทัยราษฎร์ คลองสามวา กรุงเทพฯ 10510</span></li>
+                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">📞</span><a href="tel:029065335" class="hover:text-black font-semibold">0-2906-5335-8</a></li>
+                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">📠</span>0-2906-5339</li>
+                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">✉️</span><a href="mailto:panco192@hotmail.com" class="hover:text-black font-semibold">panco192@hotmail.com</a></li>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Section 6: FAQ -->
-    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
-        <div class="wf-section-label">Section 6: FAQ Accordion</div>
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-brand-primary-dark">คำถามที่พบบ่อย (FAQ)</h2>
-            </div>
-            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <!-- Accordion Items -->
-                <div class="p-6 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-50">
-                    <span class="font-bold text-brand-primary-dark">Q: สั่งผลิตขั้นต่ำ (MOQ) อยู่ที่เท่าไหร่?</span>
-                    <span class="text-brand-gold font-bold text-xl">+</span>
-                </div>
-                <div class="p-6 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-50">
-                    <span class="font-bold text-brand-primary-dark">Q: ระยะเวลาในการผลิต (Lead Time) นานแค่ไหน?</span>
-                    <span class="text-brand-gold font-bold text-xl">+</span>
-                </div>
-                <div class="p-6 flex justify-between items-center cursor-pointer hover:bg-gray-50">
-                    <span class="font-bold text-brand-primary-dark">Q: รับทำลามิเนตวัสดุพิเศษหรือไม่?</span>
-                    <span class="text-brand-gold font-bold text-xl">+</span>
-                </div>
+        <div class="border-t border-brand-primary-dark/15 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-brand-primary-dark/70">
+            <p>&copy; 2026 Panco Prosperity Trade Ltd. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <span class="bg-brand-primary-dark/15 text-brand-primary-dark text-xs px-3 py-1 rounded-full border border-brand-primary-dark/25 font-bold">ISO 9001:2008</span>
+                <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 font-semibold">URS UKAS</span>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Section 7: CTA -->
-    <section class="relative py-24 bg-white text-center">
-        <div class="wf-section-label">Section 7: Technical Consultation CTA</div>
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-brand-primary-dark mb-6">ต้องการคำปรึกษาเชิงเทคนิค?</h2>
-            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">วิศวกรของเราพร้อมให้คำแนะนำในการเลือกวัสดุและวิธีการลามิเนตที่เหมาะสมที่สุดสำหรับผลิตภัณฑ์ของคุณ</p>
-            <button class="bg-brand-primary hover:bg-brand-primary-dark text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-colors">
-                ติดต่อวิศวกรของเรา
-            </button>
-        </div>
-    </section>
+<script>
+    // Mobile menu
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
+    // Scroll progress
+    window.addEventListener('scroll', function() {
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Form submit (static demo)
+    document.getElementById('inquiry-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const form = document.getElementById('inquiry-form');
+        const successMsg = document.getElementById('success-msg');
+
+        btn.textContent = '⏳ กำลังส่ง...';
+        btn.disabled = true;
+
+        setTimeout(function() {
+            form.style.display = 'none';
+            successMsg.classList.remove('hidden');
+        }, 1500);
+    });
+</script>
 </body>
 </html>

@@ -1,406 +1,270 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PANCO PROSPERITY TRADE LTD. | Products</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Prompt:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "on-error": "#ffffff",
-                "tertiary-container": "#c3a247",
-                "on-primary-fixed-variant": "#004e5e",
-                "tertiary-fixed": "#ffe08f",
-                "primary": "#00677c",
-                "surface-variant": "#dee3e6",
-                "on-primary-container": "#004250",
-                "surface-container-lowest": "#ffffff",
-                "on-tertiary-container": "#4a3900",
-                "on-surface-variant": "#3d494d",
-                "on-secondary-container": "#15677d",
-                "on-secondary": "#ffffff",
-                "on-background": "#171c1f",
-                "secondary-container": "#9fe4fd",
-                "error": "#ba1a1a",
-                "inverse-primary": "#4bd6fa",
-                "on-primary": "#ffffff",
-                "inverse-on-surface": "#ecf2f4",
-                "surface-container": "#e9eff1",
-                "outline": "#6d797e",
-                "on-error-container": "#93000a",
-                "error-container": "#ffdad6",
-                "on-secondary-fixed": "#001f28",
-                "on-surface": "#171c1f",
-                "primary-container": "#00b5d8",
-                "on-tertiary": "#ffffff",
-                "surface-container-high": "#e3e9ec",
-                "tertiary-fixed-dim": "#e6c364",
-                "surface-tint": "#00677c",
-                "surface": "#f5fafd",
-                "on-primary-fixed": "#001f27",
-                "secondary-fixed": "#b4ebff",
-                "primary-fixed-dim": "#4bd6fa",
-                "on-tertiary-fixed": "#241a00",
-                "secondary": "#13677c",
-                "on-tertiary-fixed-variant": "#584400",
-                "inverse-surface": "#2b3134",
-                "on-secondary-fixed-variant": "#004e5f",
-                "tertiary": "#755b00",
-                "surface-container-low": "#eff4f7",
-                "primary-fixed": "#b2ebff",
-                "surface-dim": "#d5dbde",
-                "secondary-fixed-dim": "#8bd0e9",
-                "outline-variant": "#bcc9ce",
-                "surface-container-highest": "#dee3e6",
-                "surface-bright": "#f5fafd",
-                "background": "#f5fafd"
-        },
-        "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
-        },
-        "spacing": {
-                "margin-tablet": "32px",
-                "container-max-width": "1440px",
-                "margin-mobile": "16px",
-                "gutter": "24px",
-                "margin-desktop": "64px",
-                "unit": "4px"
-        },
-        "fontFamily": {
-                "headline-lg": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "body-lg": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "body-md": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "headline-lg-mobile": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "body-sm": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "label-sm": ["JetBrains Mono", "sans-serif"],
-                "label-md": ["JetBrains Mono", "sans-serif"],
-                "headline-md": ["IBM Plex Sans", "Prompt", "sans-serif"],
-                "headline-xl": ["IBM Plex Sans", "Prompt", "sans-serif"]
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PANCO PROSPERITY TRADE LTD. | Products</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#c3a247",
+                        "primary": "#00677c",
+                        "surface-variant": "#dee3e6",
+                        "on-primary-container": "#004250",
+                        "on-background": "#171c1f",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e9eff1",
+                        "outline": "#6d797e",
+                        "primary-container": "#00b5d8",
+                        "surface-container-high": "#e3e9ec",
+                        "surface": "#f5fafd",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-low": "#eff4f7",
+                        "outline-variant": "#bcc9ce",
+                        "background": "#f5fafd"
+                    },
+                    spacing: {
+                        "margin-tablet": "32px",
+                        "container-max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["IBM Plex Sans", "Prompt", "sans-serif"],
+                        "body-lg": ["IBM Plex Sans", "Prompt", "sans-serif"],
+                        "body-md": ["IBM Plex Sans", "Prompt", "sans-serif"]
+                    }
+                }
+            }
         }
-      }
-    }
-  }
-</script>
-<style>
+    </script>
+    <style>
         body { background-color: #f5fafd; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        
-        .elevation-1 { 
-            background-color: #ffffff; 
-            border: 1px solid #bcc9ce;
-            box-shadow: 0 10px 20px -5px rgba(0, 31, 39, 0.04);
-        }
-        .elevation-2:hover {
-            box-shadow: 0 25px 50px -12px rgba(0, 31, 39, 0.12);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-
-        .tech-stripe {
-            background-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0, 31, 39, 0.04) 10px,
-                rgba(0, 31, 39, 0.04) 20px
-            );
-        }
-        
-        .product-card {
-            border: 1px solid #dee3e6;
-            background: #ffffff;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-        .product-card:hover {
-            border-color: #00b5d8;
-            box-shadow: 0 10px 20px -5px rgba(0, 181, 216, 0.1);
-        }
-</style>
+        .elevation-1 { background-color: #ffffff; border: 1px solid #bcc9ce; box-shadow: 0 10px 20px -5px rgba(0, 31, 39, 0.04); }
+        .tech-stripe { background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 31, 39, 0.04) 10px, rgba(0, 31, 39, 0.04) 20px); }
+    </style>
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
-<!-- TopNavBar -->
-<nav class="bg-on-primary-fixed text-surface docked full-width top-0 sticky shadow-md z-50">
-<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max-width mx-auto md:px-margin-desktop px-margin-mobile">
-<div class="font-headline-md text-headline-md font-bold text-surface tracking-tight">
-    PANCO PROSPERITY TRADE LTD.
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-surface-variant hover:text-surface font-label-md text-label-md hover:bg-primary-fixed-variant transition-colors duration-200 px-3 py-2 rounded" href="index.html">Home</a>
-<a class="text-surface-variant hover:text-surface font-label-md text-label-md hover:bg-primary-fixed-variant transition-colors duration-200 px-3 py-2 rounded" href="about.html">About Us</a>
-<a class="text-tertiary-container font-bold border-b-2 border-tertiary-container pb-1 font-label-md text-label-md" href="products.html">Products</a>
-</div>
-<div class="hidden md:flex">
-<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2 rounded hover:bg-primary-fixed transition-colors font-bold">
-    Request Quote
-</button>
-</div>
-<button class="md:hidden text-surface">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</nav>
-
-<main class="flex-grow pb-24">
-    <!-- Hero Section -->
-    <section class="bg-on-primary-fixed text-surface border-b border-outline-variant py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile relative overflow-hidden">
-        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply z-0"></div>
-        <div class="max-w-container-max-width mx-auto text-center z-10 relative">
-            <div class="inline-flex items-center space-x-2 bg-surface-container-high/20 text-surface px-4 py-2 rounded-full mb-6 border border-surface/20">
-                <span class="material-symbols-outlined text-sm">inventory_2</span>
-                <span class="font-label-sm text-label-sm uppercase tracking-wider">Product Catalog</span>
+    <!-- TopNavBar -->
+    <nav class="bg-on-primary-fixed text-surface w-full top-0 sticky shadow-md z-50">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max-width mx-auto md:px-margin-desktop px-margin-mobile">
+            <div class="text-2xl font-bold text-surface tracking-tight">PANCO PROSPERITY TRADE LTD.</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-surface-variant hover:text-surface transition-colors" href="index.html">Home</a>
+                <a class="text-surface-variant hover:text-surface transition-colors" href="about.html">About Us</a>
+                <a class="text-tertiary-container font-bold border-b-2 border-tertiary-container pb-1" href="products.html">Products</a>
             </div>
-            <h1 class="font-headline-xl text-headline-xl mb-6">Our Materials & Products</h1>
-            <p class="font-body-lg text-body-lg text-surface-variant max-w-3xl mx-auto">
-                ตัวเลือกวัสดุคุณภาพสูงเพื่ออุตสาหกรรมที่หลากหลาย ทั้งผ้า โฟม วัสดุประกบ และบริการตัดพิเศษ
-            </p>
-        </div>
-    </section>
-
-    <div class="max-w-container-max-width mx-auto px-margin-desktop md:px-margin-desktop px-margin-mobile mt-16">
-        
-        <!-- Category 1: Fabrics -->
-        <div class="mb-16">
-            <div class="flex items-center space-x-3 mb-8 border-b border-outline-variant pb-4">
-                <span class="material-symbols-outlined text-3xl text-primary">texture</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-primary-fixed">เนื้อผ้ามาตรฐาน (Fabrics)</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">01</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าวิซ่า</h3>
-                    <p class="font-body-sm text-on-surface-variant">สีขาว / หลากสี</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">02</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าไฮเกรท</h3>
-                    <p class="font-body-sm text-on-surface-variant">สีดำ / หลากสี</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">03</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้า Cosmo</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ (หนา/บาง)</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">04</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าสปันบอนด์</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ (หนา/บาง)</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">05</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ทรีคอต</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ (หลากสี หนา/บาง)</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">06</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ไนเล็กซ์</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">07</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้า HP</h3>
-                    <p class="font-body-sm text-on-surface-variant">หลากสี</p>
-                </div>
-                <!-- Item -->
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">08</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าไฮเกรดเงา</h3>
-                    <p class="font-body-sm text-on-surface-variant">หลากสี</p>
-                </div>
+            <div class="hidden md:flex">
+                <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded font-bold hover:bg-primary transition-colors hover:text-white">Request Quote</button>
             </div>
         </div>
+    </nav>
 
-        <!-- Category 2: Foams & EVA -->
-        <div class="mb-16">
-            <div class="flex items-center space-x-3 mb-8 border-b border-outline-variant pb-4">
-                <span class="material-symbols-outlined text-3xl text-tertiary-container">layers</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-primary-fixed">โฟมและอีวีเอ (Foams & EVA)</h2>
+    <main class="flex-grow">
+        <!-- Section 1: Hero -->
+        <section class="bg-surface-container-low border-b border-outline-variant py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile relative overflow-hidden">
+            <div class="absolute inset-0 tech-stripe opacity-30 -z-10"></div>
+            <div class="max-w-container-max-width mx-auto text-center z-10">
+                <h1 class="text-5xl font-bold text-on-primary-fixed mb-6">Our Materials & Products</h1>
+                <p class="text-lg text-on-surface-variant max-w-3xl mx-auto">
+                    รวบรวมแคตตาล็อกวัสดุอุตสาหกรรมและบริการลามิเนตแบบครบวงจร ครอบคลุมความต้องการของทุกอุตสาหกรรม
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-tertiary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">09</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">PE โฟม</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ (หนา/บาง)</p>
-                </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-tertiary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">10</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">FOAM</h3>
-                    <p class="font-body-sm text-on-surface-variant">ขาว / ดำ (หนา/บาง)</p>
-                </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-tertiary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">12</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ใย</h3>
-                    <p class="font-body-sm text-on-surface-variant">สีขาว (หนา/บาง)</p>
-                </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-tertiary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">13</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">EVA</h3>
-                    <p class="font-body-sm text-on-surface-variant">สีเทา (หลากสี) (หนา/บาง)</p>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <!-- Category 3: Laminated Products -->
-        <div class="mb-16">
-            <div class="flex items-center space-x-3 mb-8 border-b border-outline-variant pb-4">
-                <span class="material-symbols-outlined text-3xl text-primary">join</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-primary-fixed">วัสดุประกบและเคลือบ (Laminated Products)</h2>
+        <!-- Section 2: Fabrics -->
+        <section class="py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile max-w-container-max-width mx-auto">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="w-2 h-8 bg-tertiary-container"></div>
+                <h2 class="text-3xl font-bold text-on-primary-fixed">หมวดผ้า (Standard Fabrics)</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">11</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ทรีคอตประกบฟองน้ำ</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?auto=format&fit=crop&q=80" alt="Visa" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 01</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้าวิซ่าสีขาว (หลากสี)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">14</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">PVC ประกบ PVC</h3>
-                    <p class="font-body-sm text-on-surface-variant">และวัสดุอื่นๆ</p>
+                <!-- Item 2 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80" alt="High-grade" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 02</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้าไฮเกรทสีดำ (หลากสี)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">15</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">PVC ประกบกาวสติกเกอร์</h3>
-                    <p class="font-body-sm text-on-surface-variant">PU ก็ได้, ผ้าก็ได้ และต่างๆ</p>
+                <!-- Item 3 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1584286595398-a59f2afddaca?auto=format&fit=crop&q=80" alt="Cosmo" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 03</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้า Cosmo ขาว/ดำ (หนา/บาง)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">16</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ฟอยล์ประกบ PE โฟม</h3>
-                    <p class="font-body-sm text-on-surface-variant">ประกบกาวสติกเกอร์ PE โฟมต่างๆ</p>
+                <!-- Item 4 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1551048866-261ec0082f48?auto=format&fit=crop&q=80" alt="Spunbond" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 04</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้าสปันบอนด์ ขาว/ดำ (หนา/บาง)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">17</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">PVC ประกบ EVA</h3>
-                    <p class="font-body-sm text-on-surface-variant">ผ้าประกบ EVA</p>
+                <!-- Item 5 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?auto=format&fit=crop&q=80" alt="Tricot" class="w-full h-full object-cover group-hover:scale-110 transition-transform grayscale"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 05</div><h4 class="font-bold text-on-primary-fixed text-lg">ทรีคอต ขาว/ดำ (หลากสี หนา/บาง)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">18</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าเคลือบ PU</h3>
+                <!-- Item 6 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80" alt="Nylex" class="w-full h-full object-cover group-hover:scale-110 transition-transform grayscale"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 06</div><h4 class="font-bold text-on-primary-fixed text-lg">ไนเล็กซ์ ขาว/ดำ</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">19</span>
-                    </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">ผ้าประกบโฟมประกบทรีคอต</h3>
+                <!-- Item 7 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1584286595398-a59f2afddaca?auto=format&fit=crop&q=80" alt="HP" class="w-full h-full object-cover group-hover:scale-110 transition-transform grayscale"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 07</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้า HP (หลากสี)</h4></div>
                 </div>
-                <div class="product-card group">
-                    <div class="h-32 bg-surface-container rounded mb-4 flex items-center justify-center tech-stripe group-hover:bg-primary-container/20 transition-colors">
-                        <span class="font-headline-xl text-outline-variant opacity-30">20</span>
+                <!-- Item 8 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group">
+                    <div class="h-48 bg-surface-container-high relative overflow-hidden"><img src="https://images.unsplash.com/photo-1551048866-261ec0082f48?auto=format&fit=crop&q=80" alt="Shiny" class="w-full h-full object-cover group-hover:scale-110 transition-transform grayscale"></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 08</div><h4 class="font-bold text-on-primary-fixed text-lg">ผ้าไลเกรดเงา (หลากสี)</h4></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Foams & EVA -->
+        <section class="py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile max-w-container-max-width mx-auto border-t border-outline-variant">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="w-2 h-8 bg-primary"></div>
+                <h2 class="text-3xl font-bold text-on-primary-fixed">หมวดโฟมและอีวีเอ (Foams & EVA)</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Item 9 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group bg-surface-container-low border-none">
+                    <div class="h-48 bg-surface-container relative overflow-hidden p-6 flex justify-center"><div class="w-full h-full bg-white rounded border-2 border-outline-variant group-hover:scale-105 transition-transform"></div></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 09</div><h4 class="font-bold text-on-primary-fixed text-lg">PE โฟม ขาว/ดำ (หนา/บาง)</h4></div>
+                </div>
+                <!-- Item 10 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group bg-surface-container-low border-none">
+                    <div class="h-48 bg-surface-container relative overflow-hidden p-6 flex justify-center"><div class="w-full h-full bg-gray-800 rounded border-2 border-outline-variant group-hover:scale-105 transition-transform"></div></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 10</div><h4 class="font-bold text-on-primary-fixed text-lg">FOAM ขาว/ดำ (หนา/บาง)</h4></div>
+                </div>
+                <!-- Item 12 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group bg-surface-container-low border-none">
+                    <div class="h-48 bg-surface-container relative overflow-hidden p-6 flex justify-center"><div class="w-full h-full bg-gray-200 rounded border-2 border-outline-variant group-hover:scale-105 transition-transform opacity-50"></div></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 12</div><h4 class="font-bold text-on-primary-fixed text-lg">ใยสีขาว (หนา/บาง)</h4></div>
+                </div>
+                <!-- Item 13 -->
+                <div class="elevation-1 rounded-xl overflow-hidden group bg-surface-container-low border-none">
+                    <div class="h-48 bg-surface-container relative overflow-hidden p-6 flex justify-center"><div class="w-full h-full bg-gray-400 rounded border-2 border-outline-variant group-hover:scale-105 transition-transform"></div></div>
+                    <div class="p-4"><div class="text-xs text-outline font-bold mb-1">Item 13</div><h4 class="font-bold text-on-primary-fixed text-lg">EVA สีเทา (หลากสี หนา/บาง)</h4></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Laminated & Services -->
+        <section class="py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile bg-surface-container-low border-y border-outline-variant">
+            <div class="max-w-container-max-width mx-auto">
+                <div class="flex items-center space-x-4 mb-12">
+                    <div class="w-2 h-8 bg-on-primary-fixed"></div>
+                    <h2 class="text-3xl font-bold text-on-primary-fixed">วัสดุประกบและบริการอื่นๆ (Laminated & Services)</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Items 11, 14, 15, 16, 17, 18, 19, 20 -->
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">11</div><h4 class="font-bold text-on-primary-fixed">ทรีคอตประกบฟองน้ำ</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">14</div><h4 class="font-bold text-on-primary-fixed">PVC ประกบ PVC และต่างๆ</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">15</div><h4 class="font-bold text-on-primary-fixed">PVC ประกบกาวสติกเกอร์ (PU, ผ้า)</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">16</div><h4 class="font-bold text-on-primary-fixed">ฟอยล์ประกบ PE โฟม (ประกบกาวสติกเกอร์)</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">17</div><h4 class="font-bold text-on-primary-fixed">PVC ประกบ EVA / ผ้าประกบ EVA</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">18</div><h4 class="font-bold text-on-primary-fixed">ผ้าเคลือบ PU</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">19</div><h4 class="font-bold text-on-primary-fixed">ผ้าประกบโฟม ประกบทรีคอต</h4></div>
+                    <div class="bg-white p-6 rounded-xl elevation-1 flex items-center space-x-4"><div class="w-12 h-12 bg-primary-container text-on-primary-container rounded flex items-center justify-center font-bold">20</div><h4 class="font-bold text-on-primary-fixed">PVC, PU ประกบโฟม ประกบทรีคอต</h4></div>
+                    <!-- Item 21 Services -->
+                    <div class="bg-on-primary-fixed text-white p-6 rounded-xl shadow-lg flex items-center space-x-4 border border-outline"><div class="w-12 h-12 bg-tertiary-container text-on-primary-fixed rounded flex items-center justify-center font-bold">21</div><div><h4 class="font-bold mb-1">Services</h4><p class="text-sm text-surface-variant">ตัดตรง, ตัดเฉลียง, รูดเส้น (ตัดหนัง)</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Advanced Testing Facility -->
+        <section class="bg-white border-b border-outline-variant overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/2 relative min-h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80" alt="Laboratory" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 p-16 md:p-24 bg-primary text-white flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 tech-stripe opacity-20 pointer-events-none"></div>
+                    <h2 class="text-3xl font-bold mb-6 text-tertiary-container relative z-10">ห้องปฏิบัติการทดสอบภายใน</h2>
+                    <p class="text-lg text-surface-variant mb-8 leading-relaxed relative z-10">
+                        เรามีห้องปฏิบัติการที่ทันสมัยเพื่อทดสอบคุณภาพของวัสดุทุกชิ้น เพื่อให้แน่ใจว่าสินค้าได้มาตรฐานและตอบโจทย์ความต้องการสูงสุด
+                    </p>
+                    <ul class="space-y-4 text-white relative z-10 font-bold">
+                        <li class="flex items-center"><span class="material-symbols-outlined text-tertiary-container mr-3">check_circle</span> ทดสอบแรงดึง (Tensile Testing)</li>
+                        <li class="flex items-center"><span class="material-symbols-outlined text-tertiary-container mr-3">check_circle</span> ทดสอบการยึดเกาะ (Adhesion Testing)</li>
+                        <li class="flex items-center"><span class="material-symbols-outlined text-tertiary-container mr-3">check_circle</span> ตรวจสอบความสม่ำเสมอของความหนา</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: FAQ Accordion -->
+        <section class="py-24 px-margin-desktop md:px-margin-desktop px-margin-mobile bg-surface-container-low border-b border-outline-variant">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-on-primary-fixed">คำถามที่พบบ่อย (FAQ)</h2>
+                </div>
+                <div class="bg-white rounded-xl border border-outline-variant overflow-hidden elevation-1">
+                    <div class="p-6 border-b border-outline-variant flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors group">
+                        <span class="font-bold text-on-primary-fixed group-hover:text-primary transition-colors">สั่งผลิตขั้นต่ำ (MOQ) อยู่ที่เท่าไหร่?</span>
+                        <span class="material-symbols-outlined text-tertiary-container">add</span>
                     </div>
-                    <h3 class="font-headline-md text-on-primary-fixed mb-1">PVC, PU ประกบโฟม</h3>
-                    <p class="font-body-sm text-on-surface-variant">ประกบทรีคอต และต่างๆ</p>
+                    <div class="p-6 border-b border-outline-variant flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors group">
+                        <span class="font-bold text-on-primary-fixed group-hover:text-primary transition-colors">ระยะเวลาในการผลิต (Lead Time) นานแค่ไหน?</span>
+                        <span class="material-symbols-outlined text-tertiary-container">add</span>
+                    </div>
+                    <div class="p-6 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors group">
+                        <span class="font-bold text-on-primary-fixed group-hover:text-primary transition-colors">รับทำลามิเนตวัสดุพิเศษหรือไม่?</span>
+                        <span class="material-symbols-outlined text-tertiary-container">add</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Technical Consultation CTA -->
+        <section class="py-24 bg-white text-center px-margin-desktop md:px-margin-desktop px-margin-mobile">
+            <div class="max-w-4xl mx-auto">
+                <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="material-symbols-outlined text-3xl">support_agent</span>
+                </div>
+                <h2 class="text-4xl font-bold text-on-primary-fixed mb-6">ต้องการคำปรึกษาเชิงเทคนิค?</h2>
+                <p class="text-xl text-on-surface-variant mb-10 max-w-2xl mx-auto">วิศวกรของเราพร้อมให้คำแนะนำในการเลือกวัสดุและวิธีการลามิเนตที่เหมาะสมที่สุดสำหรับผลิตภัณฑ์ของคุณ</p>
+                <button class="bg-primary hover:bg-on-primary-fixed text-white font-bold py-4 px-10 rounded text-lg shadow-lg transition-colors inline-flex items-center space-x-2">
+                    <span>ติดต่อวิศวกรของเรา</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-background text-surface border-t border-outline-variant w-full bottom-0">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 w-full max-w-container-max-width mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="text-xl font-bold text-surface mb-4">PANCO PROSPERITY TRADE LTD.</div>
+                <p class="text-surface-variant text-sm mb-4">© 2024 PANCO PROSPERITY TRADE LIMITED. All Rights Reserved. ISO 9001:2008 Certified.</p>
+            </div>
+            <div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider font-bold text-surface-variant mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm"><li><a class="text-surface-variant hover:text-surface" href="#">Privacy Policy</a></li></ul>
+                </div>
+                <div>
+                    <h4 class="text-sm uppercase tracking-wider font-bold text-surface-variant mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-surface-variant">
+                        <li>192 Hathairaj Rd.</li>
+                        <li>Bangkok 10510</li>
+                        <li>Tel: 0-2906-5335-8</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Category 4: Services -->
-        <div class="mb-16">
-            <div class="flex items-center space-x-3 mb-8 border-b border-outline-variant pb-4">
-                <span class="material-symbols-outlined text-3xl text-on-primary-fixed">content_cut</span>
-                <h2 class="font-headline-lg text-headline-lg text-on-primary-fixed">บริการพิเศษ (Special Services)</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
-                <div class="product-card group flex items-center justify-between">
-                    <div>
-                        <div class="font-headline-xl text-outline-variant opacity-30 mb-2">21</div>
-                        <h3 class="font-headline-md text-on-primary-fixed mb-2">ตัดตรง ตัดเฉลียง รูดเส้นและต่างๆ (ตัดหนัง)</h3>
-                        <p class="font-body-sm text-on-surface-variant">บริการตัดและปรับแต่งวัสดุตามความต้องการเฉพาะของลูกค้า</p>
-                    </div>
-                    <button class="bg-primary-container text-on-primary-container px-6 py-3 rounded hover:bg-primary-fixed transition-colors font-bold">
-                        สอบถามเพิ่มเติม
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</main>
-
-<!-- Footer -->
-<footer class="bg-on-primary-fixed text-surface border-t border-outline-variant w-full bottom-0 mt-auto">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 w-full max-w-container-max-width mx-auto font-body-md text-body-md">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-headline-md font-bold text-surface mb-4">
-    PANCO PROSPERITY TRADE LTD.
-</div>
-<p class="text-surface-variant text-sm mb-4">
-    © 2024 PANCO PROSPERITY TRADE LIMITED. All Rights Reserved. ISO 9001:2008 Certified.
-</p>
-</div>
-<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
-<div>
-<h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-variant mb-4">Legal</h4>
-<ul class="space-y-2 font-label-sm text-label-sm">
-<li><a class="text-surface-variant hover:text-surface transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-surface-variant hover:text-surface transition-colors" href="#">Terms of Service</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-variant mb-4">Standards</h4>
-<ul class="space-y-2 font-label-sm text-label-sm">
-<li><a class="text-surface-variant hover:text-surface transition-colors" href="#">ISO Accreditation</a></li>
-<li><a class="text-surface-variant hover:text-surface transition-colors" href="#">Quality Control</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-variant mb-4">Operations</h4>
-<ul class="space-y-2 font-label-sm text-label-sm">
-<li><a class="text-surface-variant hover:text-surface transition-colors" href="#">Global Logistics</a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
+    </footer>
 </body>
 </html>
