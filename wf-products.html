@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Products (products)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-primary": "#00677c",
+                        "brand-primary-dark": "#001f27",
+                        "brand-gold": "#c3a247",
+                        "brand-surface": "#f5fafd",
+                        "brand-gray": "#e9eff1"
+                    },
+                    fontFamily: { sans: ["Prompt", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #f5fafd; color: #001f27; }
+        .wf-section-label { position: absolute; top: 0; left: 0; background-color: #c3a247; color: white; padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: bold; border-bottom-right-radius: 0.5rem; z-index: 10; }
+        .wf-placeholder-img { background-color: #e9eff1; border: 2px dashed #00b5d8; display: flex; align-items: center; justify-content: center; color: #00677c; font-weight: bold; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Wireframe -->
+    <nav class="bg-brand-primary-dark text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="font-bold text-xl">PANCO PROSPERITY TRADE LTD.</div>
+        <div class="hidden md:flex space-x-6">
+            <span class="text-gray-300">Home</span>
+            <span class="text-gray-300">About Us</span>
+            <span class="text-brand-gold border-b-2 border-brand-gold font-bold">Products</span>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section class="relative h-64 bg-white border-b-4 border-brand-gray flex items-center justify-center text-center">
+        <div class="wf-section-label">Section 1: Hero</div>
+        <div class="pt-8">
+            <h1 class="text-4xl font-bold text-brand-primary-dark mb-4">Our Materials & Products</h1>
+            <p class="text-gray-500">รวมรวมวัสดุอุตสาหกรรมและบริการลามิเนตแบบครบวงจร</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Fabrics -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 2: Category - Standard Fabrics</div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="w-2 h-8 bg-brand-gold"></div>
+                <h2 class="text-3xl font-bold text-brand-primary-dark">หมวดผ้า (Standard Fabrics)</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product Card Wireframes -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าวิซ่า (Visa)</h4></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าไฮเกรท (High-grade)</h4></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าทริคอต (Tricot)</h4></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fabric</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">ผ้าทีคอต (TC)</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Foams & EVA -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 3: Category - Foams & EVA</div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="w-2 h-8 bg-brand-primary"></div>
+                <h2 class="text-3xl font-bold text-brand-primary-dark">หมวดโฟมและอีวีเอ (Foams & EVA)</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product Card Wireframes -->
+                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Foam</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">PE Foam</h4></div>
+                </div>
+                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Foam</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">PU Foam</h4></div>
+                </div>
+                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: EVA</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">EVA (อีวีเอ)</h4></div>
+                </div>
+                <div class="bg-brand-surface rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="wf-placeholder-img h-48 w-full border-b-0">Image: Fiber</div>
+                    <div class="p-4"><h4 class="font-bold text-brand-primary">ใย (Fiber)</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Laminated & Services -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 4: Category - Laminated Products & Services</div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center space-x-4 mb-12">
+                <div class="w-2 h-8 bg-brand-primary-dark"></div>
+                <h2 class="text-3xl font-bold text-brand-primary-dark">วัสดุประกบและบริการอื่นๆ (Laminated & Services)</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Large Service Cards -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex items-center">
+                    <div class="wf-placeholder-img w-32 h-32 rounded mr-8">Image</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-primary-dark mb-2">PVC + PVC</h3>
+                        <p class="text-gray-600">ประกบฟองน้ำ หรือหนังเทียมเข้าด้วยกัน</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex items-center">
+                    <div class="wf-placeholder-img w-32 h-32 rounded mr-8">Image</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-primary-dark mb-2">บริการตัดม้วน/แผ่น</h3>
+                        <p class="text-gray-600">รับจ้างตัดวัสดุตามขนาดที่ลูกค้าต้องการ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Lab Facility -->
+    <section class="relative py-0 bg-white border-b-4 border-brand-gray overflow-hidden">
+        <div class="wf-section-label">Section 5: Advanced Testing Facility</div>
+        <div class="flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 wf-placeholder-img min-h-[400px] border-none rounded-none">
+                Image: Advanced Laboratory Facility
+            </div>
+            <div class="w-full md:w-1/2 p-16 bg-brand-primary-dark text-white flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-6 text-brand-gold">ห้องปฏิบัติการทดสอบภายใน</h2>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    เรามีห้องปฏิบัติการที่ทันสมัยเพื่อทดสอบคุณภาพของวัสดุทุกชิ้น เพื่อให้แน่ใจว่าสินค้าได้มาตรฐานตามที่กำหนดไว้
+                </p>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ทดสอบแรงดึง (Tensile Testing)</li>
+                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ทดสอบการยึดเกาะ (Adhesion Testing)</li>
+                    <li class="flex items-center"><span class="text-brand-gold mr-3">✓</span> ตรวจสอบความสม่ำเสมอของความหนา</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 6: FAQ Accordion</div>
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-primary-dark">คำถามที่พบบ่อย (FAQ)</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                <!-- Accordion Items -->
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+                    <span class="font-bold text-brand-primary-dark">Q: สั่งผลิตขั้นต่ำ (MOQ) อยู่ที่เท่าไหร่?</span>
+                    <span class="text-brand-gold font-bold text-xl">+</span>
+                </div>
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+                    <span class="font-bold text-brand-primary-dark">Q: ระยะเวลาในการผลิต (Lead Time) นานแค่ไหน?</span>
+                    <span class="text-brand-gold font-bold text-xl">+</span>
+                </div>
+                <div class="p-6 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+                    <span class="font-bold text-brand-primary-dark">Q: รับทำลามิเนตวัสดุพิเศษหรือไม่?</span>
+                    <span class="text-brand-gold font-bold text-xl">+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: CTA -->
+    <section class="relative py-24 bg-white text-center">
+        <div class="wf-section-label">Section 7: Technical Consultation CTA</div>
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-brand-primary-dark mb-6">ต้องการคำปรึกษาเชิงเทคนิค?</h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">วิศวกรของเราพร้อมให้คำแนะนำในการเลือกวัสดุและวิธีการลามิเนตที่เหมาะสมที่สุดสำหรับผลิตภัณฑ์ของคุณ</p>
+            <button class="bg-brand-primary hover:bg-brand-primary-dark text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-colors">
+                ติดต่อวิศวกรของเรา
+            </button>
+        </div>
+    </section>
+
+</body>
+</html>

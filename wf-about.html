@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - About Us (about)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-primary": "#00677c",
+                        "brand-primary-dark": "#001f27",
+                        "brand-gold": "#c3a247",
+                        "brand-surface": "#f5fafd",
+                        "brand-gray": "#e9eff1"
+                    },
+                    fontFamily: { sans: ["Prompt", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #f5fafd; color: #001f27; }
+        .wf-section-label { position: absolute; top: 0; left: 0; background-color: #c3a247; color: white; padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: bold; border-bottom-right-radius: 0.5rem; z-index: 10; }
+        .wf-placeholder-img { background-color: #e9eff1; border: 2px dashed #00b5d8; display: flex; align-items: center; justify-content: center; color: #00677c; font-weight: bold; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Wireframe -->
+    <nav class="bg-brand-primary-dark text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="font-bold text-xl">PANCO PROSPERITY TRADE LTD.</div>
+        <div class="hidden md:flex space-x-6">
+            <span class="text-gray-300">Home</span>
+            <span class="text-brand-gold border-b-2 border-brand-gold font-bold">About Us</span>
+            <span class="text-gray-300">Products</span>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section class="relative h-64 bg-brand-surface border-b-4 border-brand-gray flex items-center justify-center text-center">
+        <div class="wf-section-label">Section 1: Hero</div>
+        <div class="pt-8">
+            <h1 class="text-4xl font-bold text-brand-primary-dark mb-4">Company Profile</h1>
+            <p class="text-gray-500">ทำความรู้จักกับแพนโค โพรสเพอร์ริตี้ เทรด</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Background -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 2: Background & History</div>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-bold text-brand-primary-dark mb-6">ผู้เชี่ยวชาญด้านวัสดุอุตสาหกรรมตั้งแต่ปี 2001</h2>
+                <div class="space-y-4 text-gray-600">
+                    <p>ก่อตั้งขึ้นด้วยทุนจดทะเบียน 10 ล้านบาท พร้อมประสบการณ์ในอุตสาหกรรมวัสดุกว่าสองทศวรรษ</p>
+                    <p>เรามุ่งมั่นพัฒนาเทคโนโลยีและกระบวนการผลิตเพื่อตอบสนองความต้องการระดับพรีเมียม</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="wf-placeholder-img w-full h-80 rounded-xl">Image: Factory or Headquarters</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Core Values -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 3: Our Core Values (Bento)</div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-12">ค่านิยมหลักขององค์กร</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-brand-primary mb-4">Quality Excellence</h3>
+                    <p class="text-gray-600">ยึดมั่นในมาตรฐานการผลิตสูงสุดเพื่อให้ได้ผลิตภัณฑ์ที่มีคุณภาพสม่ำเสมอ</p>
+                </div>
+                <div class="md:col-span-1 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-brand-primary mb-4">Integrity</h3>
+                    <p class="text-gray-600">ดำเนินธุรกิจด้วยความโปร่งใสและซื่อสัตย์</p>
+                </div>
+                <div class="md:col-span-1 bg-brand-primary-dark text-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold mb-4">Innovation</h3>
+                    <p class="text-gray-300">พัฒนาเทคโนโลยีการผลิตอย่างไม่หยุดยั้ง</p>
+                </div>
+                <div class="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-bold text-brand-primary mb-4">Sustainability</h3>
+                        <p class="text-gray-600">รับผิดชอบต่อสิ่งแวดล้อมด้วยระบบบำบัดน้ำเสียที่ได้มาตรฐาน</p>
+                    </div>
+                    <div class="w-full md:w-1/2 wf-placeholder-img h-full min-h-[150px] rounded-lg">Image: Green Tech</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Milestones -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 4: Key Milestones</div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-16">เส้นทางความสำเร็จ</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center md:space-x-12 space-y-8 md:space-y-0 relative">
+                <!-- Timeline Line -->
+                <div class="absolute top-1/2 left-0 w-full h-1 bg-brand-gray hidden md:block -z-10"></div>
+                <!-- Points -->
+                <div class="bg-white p-4">
+                    <div class="text-3xl font-bold text-brand-gold mb-2">2001</div>
+                    <p class="text-gray-600 font-bold">Company Established</p>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="text-3xl font-bold text-brand-gold mb-2">2008</div>
+                    <p class="text-gray-600 font-bold">ISO 9001 Certification</p>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="text-3xl font-bold text-brand-gold mb-2">2015</div>
+                    <p class="text-gray-600 font-bold">80" Machine Installed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Certifications & CSR -->
+    <section class="relative py-0 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 5: Certifications & CSR</div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="p-16 border-r border-brand-gray bg-white">
+                <div class="wf-placeholder-img h-64 w-full rounded-xl mb-8">Image: ISO Certificate</div>
+                <h3 class="text-2xl font-bold text-brand-primary-dark mb-4">มาตรฐาน ISO 9001:2008</h3>
+                <p class="text-gray-600">รับรองโดย URS UKAS สำหรับกระบวนการบริหารจัดการคุณภาพ</p>
+            </div>
+            <div class="p-16 bg-brand-surface">
+                <div class="wf-placeholder-img h-64 w-full rounded-xl mb-8">Image: Water Treatment Plant</div>
+                <h3 class="text-2xl font-bold text-brand-primary-dark mb-4">ความรับผิดชอบต่อสิ่งแวดล้อม</h3>
+                <p class="text-gray-600">ระบบบำบัดน้ำเสียประสิทธิภาพสูง 100% Compliance และ Zero Harmful Discharge</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Team -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 6: Expert Engineering Team</div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-16">ผู้เชี่ยวชาญของเรา</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 border-4 border-brand-surface shadow-md"></div>
+                    <div class="font-bold text-brand-primary-dark">Executive Name</div>
+                    <div class="text-sm text-brand-gold">Managing Director</div>
+                </div>
+                <div>
+                    <div class="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 border-4 border-brand-surface shadow-md"></div>
+                    <div class="font-bold text-brand-primary-dark">Engineer Name</div>
+                    <div class="text-sm text-brand-gold">Lead Engineer</div>
+                </div>
+                <div>
+                    <div class="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 border-4 border-brand-surface shadow-md"></div>
+                    <div class="font-bold text-brand-primary-dark">QA Name</div>
+                    <div class="text-sm text-brand-gold">Quality Assurance Manager</div>
+                </div>
+                <div>
+                    <div class="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4 border-4 border-brand-surface shadow-md"></div>
+                    <div class="font-bold text-brand-primary-dark">R&D Name</div>
+                    <div class="text-sm text-brand-gold">Head of R&D</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Contact -->
+    <section class="relative min-h-[400px] flex items-stretch">
+        <div class="wf-section-label">Section 7: Contact & Location</div>
+        <div class="flex flex-col md:flex-row w-full">
+            <div class="w-full md:w-1/2 p-16 bg-brand-primary-dark text-white flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-8 text-brand-gold">ติดต่อเรา</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <span class="mr-4 text-2xl">📍</span>
+                        <p class="text-gray-300">123/45 ถนนอุตสาหกรรม แขวงสมอทอด เขตโรงงาน กรุงเทพฯ 10xxx</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="mr-4 text-2xl">📞</span>
+                        <p class="text-gray-300">+66 2 123 4567</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="mr-4 text-2xl">✉️</span>
+                        <p class="text-gray-300">contact@panco.co.th</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 wf-placeholder-img">Interactive Google Map</div>
+        </div>
+    </section>
+
+</body>
+</html>

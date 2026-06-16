@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Home (index)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-primary": "#00677c",
+                        "brand-primary-dark": "#001f27",
+                        "brand-gold": "#c3a247",
+                        "brand-surface": "#f5fafd",
+                        "brand-gray": "#e9eff1"
+                    },
+                    fontFamily: { sans: ["Prompt", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #f5fafd; color: #001f27; }
+        .wf-section-label { position: absolute; top: 0; left: 0; background-color: #c3a247; color: white; padding: 0.25rem 1rem; font-size: 0.875rem; font-weight: bold; border-bottom-right-radius: 0.5rem; z-index: 10; }
+        .wf-placeholder-img { background-color: #e9eff1; border: 2px dashed #00b5d8; display: flex; align-items: center; justify-content: center; color: #00677c; font-weight: bold; }
+        .wf-text-line { background-color: #dee3e6; height: 1rem; border-radius: 0.25rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Wireframe -->
+    <nav class="bg-brand-primary-dark text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="font-bold text-xl">PANCO PROSPERITY TRADE LTD.</div>
+        <div class="hidden md:flex space-x-6">
+            <span class="text-brand-gold border-b-2 border-brand-gold font-bold">Home</span>
+            <span class="text-gray-300">About Us</span>
+            <span class="text-gray-300">Products</span>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section class="relative min-h-[500px] flex items-center p-12 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 1: Hero (70:30 Layout)</div>
+        <div class="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-8 pt-8">
+            <div class="w-full md:w-2/3">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-primary-dark mb-4">ผู้นำด้านผลิตภัณฑ์<br><span class="text-brand-gold">ลามิเนต 80 นิ้ว</span></h1>
+                <p class="text-lg text-gray-600 border-l-4 border-brand-gold pl-4 mb-8">เทคโนโลยีเครื่องจักรขนาด 80 นิ้ว ที่เดียวในภูมิภาค ตอบสนองอุตสาหกรรมด้วยคุณภาพสูงสุด</p>
+                <div class="flex space-x-4">
+                    <div class="bg-brand-primary text-white px-8 py-3 rounded font-bold">Request Quote</div>
+                    <div class="border border-brand-primary text-brand-primary px-8 py-3 rounded font-bold">Technology</div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3">
+                <div class="wf-placeholder-img w-full h-80 rounded-xl">Image: Industrial Machinery</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Marquee -->
+    <section class="relative py-12 bg-brand-surface border-b-4 border-brand-gray overflow-hidden">
+        <div class="wf-section-label">Section 2: Trusted Partners</div>
+        <div class="max-w-7xl mx-auto text-center pt-6">
+            <h3 class="text-sm font-bold text-brand-primary tracking-widest uppercase mb-6">Trusted by Industry Leaders</h3>
+            <div class="flex justify-between items-center px-4 md:px-12 opacity-50 space-x-4">
+                <div class="h-12 w-32 bg-gray-300 rounded"></div>
+                <div class="h-12 w-32 bg-gray-300 rounded"></div>
+                <div class="h-12 w-32 bg-gray-300 rounded"></div>
+                <div class="h-12 w-32 bg-gray-300 rounded hidden md:block"></div>
+                <div class="h-12 w-32 bg-gray-300 rounded hidden lg:block"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Capabilities -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 3: Capabilities</div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-12">ขีดความสามารถทางอุตสาหกรรม</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-gray-200 rounded-xl text-left shadow-sm">
+                    <div class="w-16 h-16 bg-brand-primary rounded mb-4 text-white flex items-center justify-center font-bold">ICON</div>
+                    <h3 class="text-xl font-bold text-brand-primary-dark mb-2">กำลังการผลิตสูง</h3>
+                    <p class="text-gray-600 mb-4">รองรับการผลิตสูงสุด 38,000 หลาต่อวัน</p>
+                    <div class="text-2xl font-bold text-brand-gold mt-auto">38k Yds/Day</div>
+                </div>
+                <div class="p-8 bg-brand-primary-dark text-white rounded-xl text-left shadow-sm border border-brand-primary">
+                    <div class="w-16 h-16 bg-brand-gold rounded mb-4 text-brand-primary-dark flex items-center justify-center font-bold">ICON</div>
+                    <h3 class="text-xl font-bold mb-2">เครื่องจักร 80 นิ้ว</h3>
+                    <p class="text-gray-300 mb-4">เทคโนโลยีเอกสิทธิ์ช่วยลดรอยต่อ</p>
+                    <div class="text-sm font-bold text-brand-gold uppercase mt-auto">Exclusive Tech</div>
+                </div>
+                <div class="p-8 border border-gray-200 rounded-xl text-left shadow-sm">
+                    <div class="w-16 h-16 bg-brand-primary rounded mb-4 text-white flex items-center justify-center font-bold">ICON</div>
+                    <h3 class="text-xl font-bold text-brand-primary-dark mb-2">ความหลากหลายวัสดุ</h3>
+                    <p class="text-gray-600 mb-4">เชี่ยวชาญการผสมผสานวัสดุหลากหลาย</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <span class="bg-gray-200 px-2 py-1 rounded text-xs">EVA</span>
+                        <span class="bg-gray-200 px-2 py-1 rounded text-xs">Sponge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Materials Bento -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 4: Core Materials (Bento)</div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-primary-dark mb-2">โครงสร้างวัสดุ (Material Architecture)</h2>
+                </div>
+                <div class="text-brand-primary font-bold">View Specs &rarr;</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[500px]">
+                <div class="md:col-span-2 md:row-span-2 bg-white rounded-xl p-8 border border-gray-200 shadow-sm flex flex-col">
+                    <h3 class="text-2xl font-bold text-brand-primary-dark mb-4">Textile Solutions</h3>
+                    <div class="wf-placeholder-img flex-grow w-full rounded">Image: Textiles</div>
+                </div>
+                <div class="md:col-span-1 md:row-span-1 bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-primary-dark mb-2">Foam & Adhesives</h3>
+                    <ul class="text-sm text-gray-600 space-y-2 mt-4"><li>- PU Foam</li><li>- PE Foam</li><li>- High-Tack Stickers</li></ul>
+                </div>
+                <div class="md:col-span-1 md:row-span-1 bg-brand-primary-dark text-white rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-bold mb-2">EVA Material</h3>
+                    <p class="text-sm text-gray-300 mt-2">Ethylene Vinyl Acetate for superior shock absorption.</p>
+                </div>
+                <div class="md:col-span-2 md:row-span-1 bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-primary-dark mb-2">Processing Techniques</h3>
+                        <div class="flex space-x-2 mt-2"><span class="bg-brand-gray text-brand-primary px-3 py-1 rounded text-sm">Flame Lamination</span></div>
+                    </div>
+                    <div class="w-16 h-16 bg-brand-gray rounded-full flex items-center justify-center font-bold text-brand-primary">⚙️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Industries We Serve -->
+    <section class="relative py-24 bg-white border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 5: Industries We Serve</div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-12">อุตสาหกรรมที่รองรับ (Applications)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="wf-placeholder-img h-80 rounded-xl relative overflow-hidden flex items-end p-4 group">
+                    <div class="absolute inset-0 bg-brand-primary-dark/50"></div>
+                    <div class="relative z-10 w-full text-left text-white">
+                        <h3 class="text-xl font-bold">รองเท้ากีฬา</h3>
+                    </div>
+                </div>
+                <div class="wf-placeholder-img h-80 rounded-xl relative overflow-hidden flex items-end p-4">
+                    <div class="absolute inset-0 bg-brand-primary-dark/50"></div>
+                    <div class="relative z-10 w-full text-left text-white">
+                        <h3 class="text-xl font-bold">เบาะรถยนต์</h3>
+                    </div>
+                </div>
+                <div class="wf-placeholder-img h-80 rounded-xl relative overflow-hidden flex items-end p-4">
+                    <div class="absolute inset-0 bg-brand-primary-dark/50"></div>
+                    <div class="relative z-10 w-full text-left text-white">
+                        <h3 class="text-xl font-bold">เฟอร์นิเจอร์</h3>
+                    </div>
+                </div>
+                <div class="wf-placeholder-img h-80 rounded-xl relative overflow-hidden flex items-end p-4">
+                    <div class="absolute inset-0 bg-brand-primary-dark/50"></div>
+                    <div class="relative z-10 w-full text-left text-white">
+                        <h3 class="text-xl font-bold">กระเป๋าเดินทาง</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Quality Assurance -->
+    <section class="relative py-24 bg-brand-surface border-b-4 border-brand-gray">
+        <div class="wf-section-label">Section 6: Quality Assurance Process</div>
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-brand-primary-dark mb-16">Quality Assurance Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="absolute top-8 left-0 w-full h-1 bg-gray-300 hidden md:block z-0"></div>
+                <div class="relative z-10 flex flex-col md:items-start text-center md:text-left">
+                    <div class="w-16 h-16 rounded-full bg-white border-4 border-brand-surface flex items-center justify-center font-bold text-brand-primary mb-4 shadow-sm mx-auto md:mx-0">1</div>
+                    <h3 class="font-bold text-brand-primary-dark">Material Selection</h3>
+                    <p class="text-sm text-gray-500 mt-2">คัดเลือกวัตถุดิบคุณภาพสูง</p>
+                </div>
+                <div class="relative z-10 flex flex-col md:items-start text-center md:text-left">
+                    <div class="w-16 h-16 rounded-full bg-white border-4 border-brand-surface flex items-center justify-center font-bold text-brand-primary mb-4 shadow-sm mx-auto md:mx-0">2</div>
+                    <h3 class="font-bold text-brand-primary-dark">Lamination</h3>
+                    <p class="text-sm text-gray-500 mt-2">ควบคุมการผลิตด้วยเครื่องจักร 80"</p>
+                </div>
+                <div class="relative z-10 flex flex-col md:items-start text-center md:text-left">
+                    <div class="w-16 h-16 rounded-full bg-white border-4 border-brand-surface flex items-center justify-center font-bold text-brand-primary mb-4 shadow-sm mx-auto md:mx-0">3</div>
+                    <h3 class="font-bold text-brand-primary-dark">Testing</h3>
+                    <p class="text-sm text-gray-500 mt-2">ตรวจสอบความทนทานและการยึดเกาะ</p>
+                </div>
+                <div class="relative z-10 flex flex-col md:items-start text-center md:text-left">
+                    <div class="w-16 h-16 rounded-full bg-brand-primary border-4 border-brand-surface flex items-center justify-center font-bold text-white mb-4 shadow-sm mx-auto md:mx-0">4</div>
+                    <h3 class="font-bold text-brand-primary-dark">Secure Delivery</h3>
+                    <p class="text-sm text-gray-500 mt-2">จัดส่งตรงเวลาพร้อมใบรับรอง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Testimonials & CTA -->
+    <section class="relative py-24 bg-brand-primary-dark text-white">
+        <div class="wf-section-label">Section 7: Testimonials & CTA</div>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-bold mb-8">เสียงตอบรับจากคู่ค้า</h2>
+                <div class="bg-white/10 p-8 rounded-xl border border-white/20">
+                    <div class="text-brand-gold mb-4">★★★★★</div>
+                    <p class="italic text-gray-300 mb-6">"PANCO ช่วยแก้ปัญหาเรื่องรอยต่อของหน้าผ้าได้อย่างหมดจด กำลังการผลิตและคุณภาพมีความเสถียรมาก"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-600 rounded-full mr-4"></div>
+                        <div>
+                            <div class="font-bold text-sm">Procurement Director</div>
+                            <div class="text-xs text-gray-400">Leading Sportswear Brand</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="grid grid-cols-2 gap-4 text-center mb-8">
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10"><div class="text-3xl font-bold text-brand-gold">20+</div><div class="text-xs tracking-widest text-gray-400 mt-1">YEARS</div></div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10"><div class="text-3xl font-bold text-brand-gold">10M</div><div class="text-xs tracking-widest text-gray-400 mt-1">CAPITAL</div></div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10"><div class="text-3xl font-bold text-brand-gold">99%</div><div class="text-xs tracking-widest text-gray-400 mt-1">RETENTION</div></div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10"><div class="text-3xl font-bold text-brand-gold">100%</div><div class="text-xs tracking-widest text-gray-400 mt-1">CERTIFIED</div></div>
+                </div>
+                <div class="bg-brand-primary p-8 rounded-xl text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-white">ต้องการใบเสนอราคา?</h3>
+                    <button class="bg-brand-gold text-brand-primary-dark font-bold px-8 py-3 rounded">Partnership Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
