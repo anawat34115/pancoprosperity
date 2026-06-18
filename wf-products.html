@@ -12,14 +12,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "brand-primary": "#08B8E9",
-                        "brand-dark": "#0099CC",
-                        "brand-primary-dark": "#1E293B",
-                        "brand-gold": "#F0DA33",
-                        "brand-gold-light": "#FAF07A",
-                        "brand-surface": "#F8FAFC",
+                        "brand-primary": "#6930C3",
+                        "brand-dark": "#5E60CE",
+                        "brand-primary-dark": "#0E0C2B",
+                        "brand-gold": "#80FFDB",
+                        "brand-gold-light": "#48BFE3",
+                        "brand-surface": "#F6F8FC",
                         "brand-gray": "#E2E8F0",
-                        "brand-accent": "#00A2E8",
+                        "brand-accent": "#80FFDB",
                         "eco-green": "#2d6a4f",
                     },
                     fontFamily: { sans: ["Prompt", "sans-serif"] },
@@ -31,25 +31,26 @@
         body { font-family: 'Prompt', sans-serif; }
 
         .nav-glass {
-            background: rgba(9, 192, 234, 0.96);
+            background: rgba(246, 248, 252, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(30, 41, 59, 0.15);
+            border-bottom: 1px solid rgba(110, 96, 206, 0.15);
         }
 
         .page-hero {
             background-image:
-                linear-gradient(rgba(30,41,59,0.80), rgba(30,41,59,0.96)),
+                linear-gradient(rgba(14, 12, 43, 0.93), rgba(14, 12, 43, 0.97)),
                 url('https://placehold.co/1920x1080/1e293b/08b8e9?text=Contact+Hero+Background');
             background-size: cover;
             background-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
         .reveal { opacity: 0; transform: translateY(25px); transition: all 0.65s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         .card-lift { transition: all 0.3s ease; }
-        .card-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 35px -8px rgba(8,184,233,0.15); }
+        .card-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 35px -8px rgba(105, 48, 195, 0.15); }
 
         /* Map */
         #map-frame { width: 100%; height: 450px; border: 0; border-radius: 1.5rem; filter: grayscale(15%); }
@@ -68,8 +69,8 @@
             outline: none;
         }
         .form-input:focus {
-            border-color: #08B8E9;
-            box-shadow: 0 0 0 3px rgba(8,184,233,0.12);
+            border-color: #48BFE3;
+            box-shadow: 0 0 0 3px rgba(128, 255, 219, 0.25);
         }
         .form-input::placeholder { color: #9ca3af; }
 
@@ -78,20 +79,34 @@
         /* FAQ */
         details summary { list-style: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
-        details[open] .faq-icon { transform: rotate(45deg); }
+        details[open] .faq-icon { transform: rotate(45deg); color: #6930C3; }
         .faq-icon { transition: transform 0.3s ease; }
-        details[open] { background: #F8FAFC; }
+        details[open] { background: #F6F8FC; border-color: #6930C3; }
+
+        /* EEAT trust badges */
+        .trust-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(128, 255, 219, 0.12); border: 1px solid rgba(128, 255, 219, 0.4);
+            border-radius: 99px; padding: 4px 12px; font-size: 11px; font-weight: 700;
+            color: #48BFE3; letter-spacing: 0.04em;
+        }
+        .trust-badge-white {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 99px; padding: 4px 12px; font-size: 11px; font-weight: 600;
+            color: rgba(255,255,255,0.8); letter-spacing: 0.04em;
+        }
 
         /* Progress */
         #progress-bar {
             position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
-            background: linear-gradient(90deg, #F0DA33, #08B8E9);
+            background: linear-gradient(90deg, #80FFDB, #48BFE3, #6930C3);
             transition: width 0.1s;
         }
 
         /* Form submit animation */
         .btn-submit { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(240,218,51,0.4); }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(105, 48, 195, 0.4); }
         .btn-submit:active { transform: translateY(0); }
     </style>
 </head>
@@ -105,7 +120,7 @@
 <nav class="nav-glass text-brand-primary-dark sticky top-0 z-50 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
         <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
-            <div class="w-9 h-9 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-lg flex items-center justify-center font-black text-brand-primary-dark text-lg shadow-lg">P</div>
+            <div class="w-9 h-9 bg-gradient-to-br from-brand-gold to-brand-primary rounded-lg flex items-center justify-center font-black text-brand-primary-dark text-lg shadow-lg">P</div>
             <div class="leading-tight">
                 <div class="font-bold text-sm tracking-wider text-brand-primary-dark">PANCO PROSPERITY</div>
                 <div class="text-[10px] text-brand-primary-dark/80 tracking-widest uppercase">Trade Limited</div>
@@ -115,20 +130,20 @@
             <a href="wf-index.html" class="text-brand-primary-dark/70 hover:text-brand-primary-dark text-sm font-medium transition-colors">หน้าแรก</a>
             <a href="wf-about.html" class="text-brand-primary-dark/70 hover:text-brand-primary-dark text-sm font-medium transition-colors">เกี่ยวกับเรา &amp; สินค้า</a>
             <a href="wf-products.html" class="text-brand-primary-dark font-bold text-sm border-b-2 border-brand-primary-dark pb-0.5">ติดต่อเรา</a>
-            <a href="#inquiry" class="bg-brand-primary-dark text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-brand-dark transition-all shadow-md">
+            <a href="#inquiry" class="bg-gradient-to-r from-brand-primary to-brand-dark text-white px-5 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-all shadow-md">
                 ขอใบเสนอราคา
             </a>
         </div>
-        <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-black/5">
+        <button id="ham" class="md:hidden p-2 rounded-lg hover:bg-black/5">
             <svg class="w-6 h-6 text-brand-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 border-t border-brand-primary-dark/15 mt-1">
+    <div id="mob-menu" class="hidden md:hidden px-4 pb-4 border-t border-brand-primary-dark/15 mt-1">
         <div class="flex flex-col gap-3 pt-3">
             <a href="wf-index.html" class="text-brand-primary-dark/70 text-sm font-medium">หน้าแรก</a>
             <a href="wf-about.html" class="text-brand-primary-dark/70 text-sm font-medium">เกี่ยวกับเรา &amp; สินค้า</a>
             <a href="wf-products.html" class="text-brand-primary-dark font-bold text-sm">ติดต่อเรา</a>
-            <a href="#inquiry" class="bg-brand-primary-dark text-white px-5 py-2 rounded-full text-sm font-bold text-center">ขอใบเสนอราคา</a>
+            <a href="#inquiry" class="bg-gradient-to-r from-brand-primary to-brand-dark text-white px-5 py-2 rounded-full text-sm font-bold text-center">ขอใบเสนอราคา</a>
         </div>
     </div>
 </nav>
@@ -141,6 +156,14 @@
         <p class="text-brand-gold text-sm font-bold tracking-widest uppercase mb-4">Contact Us</p>
         <h1 class="text-4xl md:text-6xl font-bold text-white mb-5">ติดต่อเรา</h1>
         <p class="text-gray-300 text-lg">พร้อมให้คำปรึกษาและรับคำสั่งซื้อ<br>ทุกวันจันทร์–ศุกร์ เวลา 08:00–17:00 น.</p>
+        
+        <!-- EEAT: Trust badges in hero -->
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+            <span class="trust-badge">✓ ISO 9001:2008 Certified</span>
+            <span class="trust-badge">✓ ก่อตั้งปี 2544 · 25+ ปี</span>
+            <span class="trust-badge">✓ URS UKAS Accredited</span>
+        </div>
+
         <div class="w-20 h-1 bg-brand-gold mx-auto mt-8 rounded-full"></div>
         <!-- Breadcrumb -->
         <div class="flex items-center justify-center gap-2 mt-6 text-sm text-gray-500">
@@ -158,8 +181,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Address -->
-            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
-                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">📍</div>
+            <div class="bg-gradient-to-b from-white to-brand-surface/40 border border-brand-primary/10 shadow-[0_8px_30px_rgb(0,0,0,0.02)] rounded-2xl p-6 card-lift reveal">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-xl flex items-center justify-center text-xl mb-4">📍</div>
                 <h3 class="font-bold text-brand-primary-dark mb-2">ที่อยู่</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
                     บริษัท แพนโก้ พรอสเพอริตี้ เทรด จำกัด<br>
@@ -170,10 +193,10 @@
             </div>
 
             <!-- Phone -->
-            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
-                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">📞</div>
+            <div class="bg-gradient-to-b from-white to-brand-surface/40 border border-brand-primary/10 shadow-[0_8px_30px_rgb(0,0,0,0.02)] rounded-2xl p-6 card-lift reveal">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-xl flex items-center justify-center text-xl mb-4">📞</div>
                 <h3 class="font-bold text-brand-primary-dark mb-2">โทรศัพท์</h3>
-                <a href="tel:026906-5335" class="text-brand-primary font-bold hover:underline">0-2906-5335-8</a>
+                <a href="tel:029065335" class="text-brand-primary font-bold hover:text-brand-dark transition-colors hover:underline">0-2906-5335-8</a>
                 <div class="mt-3 pt-3 border-t border-brand-gray">
                     <div class="text-xs text-gray-500 mb-1">แฟ็กซ์</div>
                     <div class="text-brand-primary-dark font-semibold">0-2906-5339</div>
@@ -181,10 +204,10 @@
             </div>
 
             <!-- Email -->
-            <div class="bg-brand-surface rounded-2xl p-6 border border-brand-gray card-lift reveal">
-                <div class="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center text-2xl mb-4">✉️</div>
+            <div class="bg-gradient-to-b from-white to-brand-surface/40 border border-brand-primary/10 shadow-[0_8px_30px_rgb(0,0,0,0.02)] rounded-2xl p-6 card-lift reveal">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-xl flex items-center justify-center text-xl mb-4">✉️</div>
                 <h3 class="font-bold text-brand-primary-dark mb-2">อีเมล</h3>
-                <a href="mailto:panco192@hotmail.com" class="text-brand-primary font-semibold text-sm hover:underline break-all">
+                <a href="mailto:panco192@hotmail.com" class="text-brand-primary font-semibold text-sm hover:text-brand-dark transition-colors hover:underline break-all">
                     panco192@hotmail.com
                 </a>
                 <div class="mt-3 pt-3 border-t border-brand-gray">
@@ -193,8 +216,8 @@
             </div>
 
             <!-- Hours -->
-            <div class="bg-brand-primary-dark text-white rounded-2xl p-6 card-lift reveal border-l-4 border-brand-gold">
-                <div class="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-2xl mb-4">🕐</div>
+            <div class="bg-gradient-to-br from-brand-primary-dark to-brand-primary text-white rounded-2xl p-6 card-lift reveal border-l-4 border-brand-gold">
+                <div class="w-12 h-12 bg-white/10 text-brand-gold rounded-xl flex items-center justify-center text-xl mb-4">🕐</div>
                 <h3 class="font-bold mb-3 text-brand-gold">เวลาทำการ</h3>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
@@ -240,7 +263,7 @@
                 </iframe>
             </div>
             <div class="mt-4 flex flex-wrap gap-3">
-                <a href="https://maps.google.com/?q=192+Hathairaj+Rd+Bang+Chan+Klongsamwa+Bangkok" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-brand-primary font-semibold hover:text-brand-gold transition-colors">
+                <a href="https://maps.google.com/?q=192+Hathairaj+Rd+Bang+Chan+Klongsamwa+Bangkok" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-brand-primary font-semibold hover:text-brand-dark transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     เปิด Google Maps
                 </a>
@@ -271,21 +294,21 @@
 
                 <div class="space-y-5">
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-brand-gold/20 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-gold font-black">1</div>
+                        <div class="w-10 h-10 bg-gradient-to-br from-brand-gold/30 to-brand-gold-light/30 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-primary-dark font-black">1</div>
                         <div>
                             <div class="font-bold text-brand-primary-dark">กรอกข้อมูลบริษัทและความต้องการ</div>
                             <div class="text-sm text-gray-500">ยิ่งละเอียด ยิ่งเสนอราคาได้ตรงกว่า</div>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-primary font-black">2</div>
+                        <div class="w-10 h-10 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 rounded-xl flex items-center justify-center flex-shrink-0 text-brand-primary font-black">2</div>
                         <div>
                             <div class="font-bold text-brand-primary-dark">ทีมงานวิเคราะห์และเสนอราคา</div>
                             <div class="text-sm text-gray-500">พร้อมให้คำแนะนำเลือกวัสดุที่เหมาะสม</div>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-eco-green/10 rounded-xl flex items-center justify-center flex-shrink-0 text-eco-green font-black">3</div>
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0 text-emerald-600 font-black">3</div>
                         <div>
                             <div class="font-bold text-brand-primary-dark">รับใบเสนอราคาภายใน 1 วันทำการ</div>
                             <div class="text-sm text-gray-500">ทางอีเมลหรือโทรศัพท์ตามที่ระบุ</div>
@@ -297,14 +320,14 @@
                 <div class="mt-10 pt-8 border-t border-brand-gray">
                     <p class="text-sm font-bold text-brand-primary-dark mb-4">หรือติดต่อด่วนผ่าน</p>
                     <div class="flex flex-col gap-3">
-                        <a href="tel:0290653358" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary transition-colors">
+                        <a href="tel:029065335" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary hover:shadow-md transition-all">
                             <span class="text-xl">📞</span>
                             <div>
                                 <div class="font-bold text-brand-primary-dark text-sm">โทรหาเราได้เลย</div>
                                 <div class="text-brand-primary text-sm">0-2906-5335-8</div>
                             </div>
                         </a>
-                        <a href="mailto:panco192@hotmail.com" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary transition-colors">
+                        <a href="mailto:panco192@hotmail.com" class="flex items-center gap-3 bg-white rounded-xl p-4 border border-brand-gray hover:border-brand-primary hover:shadow-md transition-all">
                             <span class="text-xl">✉️</span>
                             <div>
                                 <div class="font-bold text-brand-primary-dark text-sm">ส่งอีเมลตรง</div>
@@ -317,7 +340,7 @@
 
             <!-- Right: Form -->
             <div class="lg:col-span-3 reveal">
-                <div class="bg-white rounded-3xl shadow-xl border border-brand-gray p-8 sm:p-10">
+                <div class="bg-white rounded-3xl border border-brand-primary/10 shadow-[0_20px_50px_rgba(105,48,195,0.08)] p-8 sm:p-10">
                     <h3 class="text-xl font-bold text-brand-primary-dark mb-6">รายละเอียดการสอบถาม</h3>
                     <form id="inquiry-form" novalidate>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
@@ -381,7 +404,7 @@
                             * ข้อมูลของคุณจะถูกใช้เพื่อการติดต่อและเสนอราคาเท่านั้น ไม่มีการเผยแพร่ให้บุคคลภายนอก
                         </p>
 
-                        <button type="submit" id="submit-btn" class="btn-submit w-full bg-brand-gold text-brand-primary-dark font-bold py-4 px-8 rounded-2xl text-lg shadow-lg">
+                        <button type="submit" id="submit-btn" class="btn-submit w-full bg-gradient-to-r from-brand-gold to-brand-gold-light text-brand-primary-dark font-bold py-4 px-8 rounded-2xl text-lg shadow-lg hover:shadow-[0_10px_30px_rgba(128,255,219,0.3)] transition-all">
                             📋 ส่งใบสอบถาม / ขอใบเสนอราคา
                         </button>
                     </form>
@@ -410,16 +433,16 @@
 
         <div class="space-y-4 reveal">
             <!-- FAQ 1 -->
-            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
-                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+            <details class="border border-brand-primary/10 hover:border-brand-primary/30 rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface/50 transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q1</span>
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q1</span>
                         รับลามิเนทหน้ากว้างสูงสุดเท่าไหร่?
                     </span>
-                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <svg class="faq-icon w-5 h-5 text-brand-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
-                    <p class="text-gray-600 leading-relaxed">
+                <div class="px-6 pb-6 pt-3 border-t border-brand-primary/5 bg-brand-surface/40">
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         เราสามารถลามิเนทได้หน้ากว้างสูงสุด <strong class="text-brand-primary">80 นิ้ว</strong>
                         ซึ่งเป็นจุดเด่นพิเศษของ PANCO ที่ใช้เครื่องจักรนำเข้าพิเศษ
                         ทำให้สามารถผลิตวัสดุหน้ากว้างขนาดใหญ่สำหรับอุตสาหกรรมเบาะรถยนต์
@@ -429,16 +452,16 @@
             </details>
 
             <!-- FAQ 2 -->
-            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
-                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+            <details class="border border-brand-primary/10 hover:border-brand-primary/30 rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface/50 transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q2</span>
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q2</span>
                         มีบริการทำสติ๊กเกอร์หรือไม่?
                     </span>
-                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <svg class="faq-icon w-5 h-5 text-brand-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
-                    <p class="text-gray-600 leading-relaxed">
+                <div class="px-6 pb-6 pt-3 border-t border-brand-primary/5 bg-brand-surface/40">
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         <strong class="text-brand-primary">มีครับ</strong> — เราพัฒนาเทคโนโลยีการผลิตกาวสติ๊กเกอร์ (Adhesive Sticker)
                         เป็นผลสำเร็จตั้งแต่ <strong>สิงหาคม 2545</strong>
                         โดยสามารถประกบกาวสติ๊กเกอร์บนวัสดุประเภท PVC, PU, ผ้า และฟอยล์
@@ -448,16 +471,16 @@
             </details>
 
             <!-- FAQ 3 -->
-            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
-                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+            <details class="border border-brand-primary/10 hover:border-brand-primary/30 rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface/50 transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q3</span>
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q3</span>
                         กำลังการผลิตต่อวันอยู่ที่เท่าไหร่?
                     </span>
-                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <svg class="faq-icon w-5 h-5 text-brand-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
-                    <p class="text-gray-600 leading-relaxed">
+                <div class="px-6 pb-6 pt-3 border-t border-brand-primary/5 bg-brand-surface/40">
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         กำลังการผลิตสูงสุดของเราอยู่ที่ <strong class="text-brand-primary">38,000 หลา ต่อ 8 ชั่วโมง</strong>
                         (เพิ่มขึ้นจาก 25,000 หลา หลังจากนำเข้าเครื่องจักรรุ่นใหม่ในปี 2545)
                         ซึ่งเพียงพอต่อการรองรับคำสั่งซื้อขนาดใหญ่จากโรงงานอุตสาหกรรม
@@ -467,16 +490,16 @@
             </details>
 
             <!-- FAQ 4 -->
-            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
-                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+            <details class="border border-brand-primary/10 hover:border-brand-primary/30 rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface/50 transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q4</span>
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q4</span>
                         มี MOQ (ปริมาณสั่งซื้อขั้นต่ำ) ไหม?
                     </span>
-                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <svg class="faq-icon w-5 h-5 text-brand-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
-                    <p class="text-gray-600 leading-relaxed">
+                <div class="px-6 pb-6 pt-3 border-t border-brand-primary/5 bg-brand-surface/40">
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         MOQ ขึ้นอยู่กับประเภทสินค้าและวัสดุที่ต้องการ
                         กรุณาติดต่อทีมงานโดยตรงผ่านแบบฟอร์มหรือโทรศัพท์
                         เพื่อรับข้อมูลปริมาณขั้นต่ำและราคาที่เหมาะสมสำหรับออเดอร์ของคุณ
@@ -485,16 +508,16 @@
             </details>
 
             <!-- FAQ 5 -->
-            <details class="border-2 border-brand-gray rounded-2xl overflow-hidden group transition-all">
-                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface transition-colors">
+            <details class="border border-brand-primary/10 hover:border-brand-primary/30 rounded-2xl overflow-hidden group transition-all">
+                <summary class="flex items-center justify-between p-6 font-bold text-brand-primary-dark hover:bg-brand-surface/50 transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="w-8 h-8 bg-brand-gold/20 text-brand-gold rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q5</span>
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-primary/10 to-brand-dark/10 text-brand-primary rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">Q5</span>
                         สินค้าได้มาตรฐานอะไรบ้าง?
                     </span>
-                    <svg class="faq-icon w-5 h-5 text-brand-gold flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                    <svg class="faq-icon w-5 h-5 text-brand-primary flex-shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
                 </summary>
-                <div class="px-6 pb-6 pt-3 border-t border-brand-gray bg-brand-surface">
-                    <p class="text-gray-600 leading-relaxed">
+                <div class="px-6 pb-6 pt-3 border-t border-brand-primary/5 bg-brand-surface/40">
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         บริษัทฯ ได้รับการรับรองมาตรฐาน <strong class="text-brand-primary">ISO 9001:2008</strong>
                         จาก United Registrar of Systems (URS) ที่ได้รับการรับรองโดย <strong>UKAS</strong>
                         (United Kingdom Accreditation Service) ตั้งแต่วันที่ 17 มกราคม 2546
@@ -507,48 +530,48 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#09C0EA] text-brand-primary-dark border-t border-brand-primary-dark/15">
+<footer class="bg-brand-primary-dark text-white border-t border-brand-primary/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             <div class="lg:col-span-2">
                 <div class="flex items-center gap-3 mb-5">
-                    <div class="w-10 h-10 bg-brand-primary-dark text-white rounded-lg flex items-center justify-center font-black text-lg">P</div>
+                    <div class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center font-black text-lg">P</div>
                     <div>
-                        <div class="font-bold text-lg tracking-wide text-brand-primary-dark">PANCO PROSPERITY</div>
-                        <div class="text-xs text-brand-primary-dark/70 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>
+                        <div class="font-bold text-lg tracking-wide text-white">PANCO PROSPERITY</div>
+                        <div class="text-xs text-gray-400 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>
                     </div>
                 </div>
-                <p class="text-brand-primary-dark/80 leading-relaxed mb-6 max-w-sm text-sm">ผู้เชี่ยวชาญด้านการลามิเนทวัสดุอุตสาหกรรมหน้ากว้าง 80 นิ้ว มาตรฐาน ISO 9001:2008 URS UKAS กว่า 25 ปี</p>
+                <p class="text-gray-300 leading-relaxed mb-5 max-w-sm text-sm">ผู้เชี่ยวชาญด้านการลามิเนทวัสดุอุตสาหกรรมหน้ากว้าง 80 นิ้ว มาตรฐาน ISO 9001:2008 URS UKAS กว่า 25 ปี</p>
                 <div class="flex gap-2 flex-wrap">
-                    <span class="bg-brand-primary-dark/15 text-brand-primary-dark text-xs px-3 py-1 rounded-full border border-brand-primary-dark/25 font-bold">ISO 9001:2008</span>
-                    <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 text-brand-primary-dark/80">URS UKAS</span>
-                    <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 text-brand-primary-dark/80">ก่อตั้ง 2544</span>
+                    <span class="bg-white/10 text-brand-gold text-xs px-3 py-1 rounded-full border border-brand-gold/25 font-bold">ISO 9001:2008</span>
+                    <span class="bg-white/5 text-xs px-3 py-1 rounded-full border border-white/10 text-gray-300">URS UKAS</span>
+                    <span class="bg-white/5 text-xs px-3 py-1 rounded-full border border-white/10 text-gray-300">ก่อตั้ง 2544</span>
                 </div>
             </div>
             <div>
-                <h4 class="font-bold text-brand-primary-dark mb-5 text-xs uppercase tracking-wide">ลิงก์หลัก</h4>
-                <ul class="space-y-3 text-brand-primary-dark/80 text-sm">
-                    <li><a href="wf-index.html" class="hover:text-black font-semibold transition-colors">หน้าแรก</a></li>
-                    <li><a href="wf-about.html" class="hover:text-black font-semibold transition-colors">เกี่ยวกับเรา &amp; สินค้า</a></li>
-                    <li><a href="wf-about.html#catalog" class="hover:text-black font-semibold transition-colors">แคตตาล็อกสินค้า</a></li>
-                    <li><a href="wf-products.html" class="hover:text-black font-semibold transition-colors">ติดต่อเรา</a></li>
+                <h4 class="font-bold text-white mb-5 text-xs uppercase tracking-wide">ลิงก์หลัก</h4>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li><a href="wf-index.html" class="hover:text-brand-gold font-semibold transition-colors">หน้าแรก</a></li>
+                    <li><a href="wf-about.html" class="hover:text-brand-gold font-semibold transition-colors">เกี่ยวกับเรา &amp; สินค้า</a></li>
+                    <li><a href="wf-about.html#catalog" class="hover:text-brand-gold font-semibold transition-colors">แคตตาล็อกสินค้า</a></li>
+                    <li><a href="wf-products.html" class="hover:text-brand-gold font-semibold transition-colors">ติดต่อเรา</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-brand-primary-dark mb-5 text-xs uppercase tracking-wide">ติดต่อเรา</h4>
-                <ul class="space-y-3 text-brand-primary-dark/80 text-sm">
-                    <li class="flex items-start gap-2"><span class="text-brand-primary-dark">📍</span><span>192 ถ.หทัยราษฎร์ คลองสามวา กรุงเทพฯ 10510</span></li>
-                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">📞</span><a href="tel:029065335" class="hover:text-black font-semibold">0-2906-5335-8</a></li>
-                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">📠</span>0-2906-5339</li>
-                    <li class="flex items-center gap-2"><span class="text-brand-primary-dark">✉️</span><a href="mailto:panco192@hotmail.com" class="hover:text-black font-semibold">panco192@hotmail.com</a></li>
+                <h4 class="font-bold text-white mb-5 text-xs uppercase tracking-wide">ติดต่อเรา</h4>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li class="flex items-start gap-2"><span class="text-brand-gold">📍</span><span>192 ถ.หทัยราษฎร์ คลองสามวา กรุงเทพฯ 10510</span></li>
+                    <li class="flex items-center gap-2"><span class="text-brand-gold">📞</span><a href="tel:029065335" class="hover:text-brand-gold font-semibold">0-2906-5335-8</a></li>
+                    <li class="flex items-center gap-2"><span class="text-brand-gold">📠</span>0-2906-5339</li>
+                    <li class="flex items-center gap-2"><span class="text-brand-gold">✉️</span><a href="mailto:panco192@hotmail.com" class="hover:text-brand-gold font-semibold">panco192@hotmail.com</a></li>
                 </ul>
             </div>
         </div>
-        <div class="border-t border-brand-primary-dark/15 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-brand-primary-dark/70">
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
             <p>&copy; 2026 Panco Prosperity Trade Ltd. All rights reserved.</p>
             <div class="flex items-center gap-4">
-                <span class="bg-brand-primary-dark/15 text-brand-primary-dark text-xs px-3 py-1 rounded-full border border-brand-primary-dark/25 font-bold">ISO 9001:2008</span>
-                <span class="bg-brand-primary-dark/5 text-xs px-3 py-1 rounded-full border border-brand-primary-dark/10 font-semibold">URS UKAS</span>
+                <span class="bg-white/10 text-brand-gold text-xs px-3 py-1 rounded-full border border-brand-gold/25 font-bold">ISO 9001:2008</span>
+                <span class="bg-white/5 text-xs px-3 py-1 rounded-full border border-white/10 font-semibold">URS UKAS</span>
             </div>
         </div>
     </div>
@@ -556,8 +579,8 @@
 
 <script>
     // Mobile menu
-    document.getElementById('menu-btn').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+    document.getElementById('ham').addEventListener('click', function() {
+        document.getElementById('mob-menu').classList.toggle('hidden');
     });
 
     // Scroll progress
