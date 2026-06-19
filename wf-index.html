@@ -12,14 +12,15 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#6930C3",
-                        "primary-dark": "#5E60CE",
-                        "primary-deeper": "#0E0C2B",
-                        mint: "#80FFDB",
-                        sky: "#48BFE3",
+                        primary: "#4EA8DE", // Sky Blue - Priority 1
+                        "primary-dark": "#5390D9", // Medium Blue - Priority 3
+                        "primary-deeper": "#0E0C2B", // Dark background
+                        mint: "#72EFDD", // Mint Green - Priority 2
+                        sky: "#4EA8DE", // Sky Blue - Priority 1
+                        purple: "#5E60CE", // Dark Lavender - Priority 4
                         surface: "#F6F8FC",
                         muted: "#8E8CA8",
-                        accent: "#80FFDB",
+                        accent: "#72EFDD",
                     },
                     fontFamily: { sans: ["IBM Plex Sans Thai", "IBM Plex Sans", "sans-serif"] }
                 }
@@ -33,13 +34,13 @@
         .nav-wrap {
             background: rgba(246, 248, 252, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(110, 96, 206, 0.15);
+            border-bottom: 1px solid rgba(78, 168, 222, 0.15);
         }
 
         /* HERO */
         .hero-wrap {
             background:
-                linear-gradient(110deg, rgba(14, 12, 43, 0.97) 40%, rgba(105, 48, 195, 0.82) 100%),
+                linear-gradient(110deg, rgba(14, 12, 43, 0.97) 40%, rgba(78, 168, 222, 0.8) 100%),
                 url('https://placehold.co/1920x1080/1e293b/08b8e9?text=Factory+Hero+Background') center/cover no-repeat;
             min-height: 90vh;
             clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
@@ -51,7 +52,7 @@
 
         /* CARD */
         .card { transition: all .3s ease; }
-        .card:hover { transform:translateY(-6px); box-shadow:0 24px 48px -12px rgba(105, 48, 195, 0.25); }
+        .card:hover { transform:translateY(-6px); box-shadow:0 24px 48px -12px rgba(78, 168, 222, 0.25); }
 
         /* IMAGE OVERLAY */
         .img-card { position:relative; overflow:hidden; }
@@ -65,7 +66,7 @@
 
         /* DARK SECTION pattern with slanted clip path */
         .dark-section {
-            background: linear-gradient(135deg, #0A091A 0%, #1A1440 50%, #0A091A 100%);
+            background: linear-gradient(135deg, #0A091A 0%, #0D2A4A 50%, #0A091A 100%);
             clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
         }
 
@@ -73,15 +74,15 @@
         .stat-num { font-feature-settings:"tnum"; }
 
         /* SCROLL PROGRESS */
-        #scprog { position:fixed; top:0; left:0; height:3px; z-index:9999; background:linear-gradient(90deg, #80FFDB, #48BFE3, #6930C3); }
+        #scprog { position:fixed; top:0; left:0; height:3px; z-index:9999; background:linear-gradient(90deg, #4EA8DE, #72EFDD, #5390D9, #5E60CE); }
 
         /* Gradients */
         .text-mint-grad {
-            background: linear-gradient(135deg, #80FFDB, #48BFE3, #64DFDF);
+            background: linear-gradient(135deg, #72EFDD, #4EA8DE, #72EFDD);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .text-purple-grad {
-            background: linear-gradient(135deg, #6930C3, #5E60CE, #48BFE3);
+            background: linear-gradient(135deg, #4EA8DE, #5390D9, #5E60CE);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
 
@@ -165,7 +166,7 @@
             </p>
 
             <div class="flex flex-wrap gap-4 mt-8">
-                <a href="wf-about.html" class="bg-gradient-to-r from-mint to-sky hover:opacity-90 text-primary-deeper font-bold px-8 py-3.5 rounded-full transition-all shadow-[0_0_25px_rgba(128,255,219,.3)]">
+                <a href="wf-about.html" class="bg-gradient-to-r from-mint to-sky hover:opacity-90 text-primary-deeper font-bold px-8 py-3.5 rounded-full transition-all shadow-[0_0_25px_rgba(114,239,221,.3)]">
                     🧵 ดูสินค้าทั้งหมด
                 </a>
                 <a href="wf-products.html" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-3.5 rounded-full transition-all">
@@ -176,25 +177,33 @@
 
         <!-- Right: Feature Cards -->
         <div class="grid grid-cols-2 gap-4 reveal">
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors">
-                <div class="text-4xl font-black text-mint mb-2 stat-num">38k</div>
-                <div class="text-white font-semibold text-sm">หลา / 8 ชั่วโมง</div>
-                <div class="text-gray-400 text-xs mt-1">กำลังการผลิตสูงสุด</div>
+            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                <div class="skew-x-[15deg]">
+                    <div class="text-4xl font-black text-mint mb-2 stat-num">38k</div>
+                    <div class="text-white font-semibold text-sm">หลา / 8 ชั่วโมง</div>
+                    <div class="text-gray-400 text-xs mt-1">กำลังการผลิตสูงสุด</div>
+                </div>
             </div>
-            <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-6 border border-primary/20">
-                <div class="text-4xl font-black text-mint mb-2 stat-num">80"</div>
-                <div class="text-white font-semibold text-sm">หน้ากว้างลามิเนท</div>
-                <div class="text-mint/70 text-xs mt-1">Exclusive Technology</div>
+            <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-6 border border-primary/20 skew-x-[-15deg]">
+                <div class="skew-x-[15deg]">
+                    <div class="text-4xl font-black text-mint mb-2 stat-num">80"</div>
+                    <div class="text-white font-semibold text-sm">หน้ากว้างลามิเนท</div>
+                    <div class="text-mint/70 text-xs mt-1">Exclusive Technology</div>
+                </div>
             </div>
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors">
-                <div class="text-4xl font-black text-white mb-2 stat-num">25+</div>
-                <div class="text-white font-semibold text-sm">ปีประสบการณ์</div>
-                <div class="text-gray-400 text-xs mt-1">ก่อตั้งปี 2544</div>
+            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                <div class="skew-x-[15deg]">
+                    <div class="text-4xl font-black text-white mb-2 stat-num">25+</div>
+                    <div class="text-white font-semibold text-sm">ปีประสบการณ์</div>
+                    <div class="text-gray-400 text-xs mt-1">ก่อตั้งปี 2544</div>
+                </div>
             </div>
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors">
-                <div class="text-4xl font-black text-mint mb-2 stat-num">21</div>
-                <div class="text-white font-semibold text-sm">รายการสินค้า</div>
-                <div class="text-gray-400 text-xs mt-1">วัสดุ &amp; บริการ</div>
+            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                <div class="skew-x-[15deg]">
+                    <div class="text-4xl font-black text-mint mb-2 stat-num">21</div>
+                    <div class="text-white font-semibold text-sm">รายการสินค้า</div>
+                    <div class="text-gray-400 text-xs mt-1">วัสดุ &amp; บริการ</div>
+                </div>
             </div>
         </div>
     </div>
