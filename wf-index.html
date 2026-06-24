@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Panco Prosperity Trade — ผู้นำด้านอุตสาหกรรมการลามิเนท วัสดุคุณภาพสูง มาตรฐาน ISO 9001:2008">
+    <meta name="description"
+        content="Panco Prosperity Trade — ผู้นำด้านอุตสาหกรรมการลามิเนท วัสดุคุณภาพสูง มาตรฐาน ISO 9001:2008">
     <title>Panco Prosperity Trade — From Materials to Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -22,13 +26,27 @@
                         muted: "#8E8CA8",
                         accent: "#72EFDD",
                     },
-                    fontFamily: { sans: ["IBM Plex Sans Thai", "IBM Plex Sans", "sans-serif"] }
+                    fontFamily: { sans: ["IBM Plex Sans Thai", "IBM Plex Sans", "sans-serif"] },
+                    fontSize: {
+                        xs: ['13px', { lineHeight: '18px' }],
+                        sm: ['15px', { lineHeight: '22px' }],
+                        base: ['17px', { lineHeight: '26px' }],
+                        lg: ['19px', { lineHeight: '28px' }],
+                        xl: ['21px', { lineHeight: '30px' }],
+                        '2xl': ['26px', { lineHeight: '34px' }],
+                        '3xl': ['32px', { lineHeight: '40px' }],
+                        '4xl': ['40px', { lineHeight: '48px' }],
+                        '5xl': ['50px', { lineHeight: '1' }],
+                        '6xl': ['62px', { lineHeight: '1' }],
+                    }
                 }
             }
         }
     </script>
     <style>
-        * { font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif; }
+        * {
+            font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
+        }
 
         /* NAV */
         .nav-wrap {
@@ -41,28 +59,62 @@
         .hero-wrap {
             background:
                 linear-gradient(110deg, rgba(14, 12, 43, 0.97) 40%, rgba(78, 168, 222, 0.8) 100%),
-                url('https://placehold.co/1920x1080/1e293b/08b8e9?text=Factory+Hero+Background') center/cover no-repeat;
+                url('images/factory_hero.png') center/cover no-repeat;
             min-height: 90vh;
             clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
         }
 
         /* REVEAL */
-        .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.show { opacity:1; transform:translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* CARD */
-        .card { transition: all .3s ease; }
-        .card:hover { transform:translateY(-6px); box-shadow:0 24px 48px -12px rgba(78, 168, 222, 0.25); }
+        .card {
+            transition: all .3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -12px rgba(78, 168, 222, 0.25);
+        }
 
         /* IMAGE OVERLAY */
-        .img-card { position:relative; overflow:hidden; }
-        .img-card img { transition:transform .6s ease; }
-        .img-card:hover img { transform:scale(1.07); }
-        .img-card::after {
-            content:''; position:absolute; inset:0;
-            background:linear-gradient(to top, rgba(14, 12, 43, 0.85) 0%, transparent 60%);
+        .img-card {
+            position: relative;
+            overflow: hidden;
         }
-        .img-card .overlay-text { position:absolute; bottom:0; left:0; right:0; z-index:10; padding:1.5rem; }
+
+        .img-card img {
+            transition: transform .6s ease;
+        }
+
+        .img-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .img-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 12, 43, 0.85) 0%, transparent 60%);
+        }
+
+        .img-card .overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 1.5rem;
+        }
 
         /* DARK SECTION pattern with slanted clip path */
         .dark-section {
@@ -71,499 +123,633 @@
         }
 
         /* STAT COUNTER */
-        .stat-num { font-feature-settings:"tnum"; }
+        .stat-num {
+            font-feature-settings: "tnum";
+        }
 
         /* SCROLL PROGRESS */
-        #scprog { position:fixed; top:0; left:0; height:3px; z-index:9999; background:linear-gradient(90deg, #4EA8DE, #72EFDD, #5390D9, #5E60CE); }
+        #scprog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            z-index: 9999;
+            background: linear-gradient(90deg, #4EA8DE, #72EFDD, #5390D9, #5E60CE);
+        }
 
         /* Gradients */
         .text-mint-grad {
             background: linear-gradient(135deg, #72EFDD, #4EA8DE, #72EFDD);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .text-purple-grad {
             background: linear-gradient(135deg, #4EA8DE, #5390D9, #5E60CE);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* mobile menu */
-        #mob-menu { transition: max-height .3s ease, opacity .3s ease; max-height:0; overflow:hidden; opacity:0; }
-        #mob-menu.open { max-height:300px; opacity:1; }
+        #mob-menu {
+            transition: max-height .3s ease, opacity .3s ease;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        #mob-menu.open {
+            max-height: 300px;
+            opacity: 1;
+        }
     </style>
 </head>
-<body class="bg-white text-primary-deeper antialiased">
 
-<div id="scprog" style="width:0"></div>
+<body class="bg-white text-primary-deeper antialiased text-base">
 
-<!-- ══════════════════════════════════════
+    <div id="scprog" style="width:0"></div>
+
+    <!-- ══════════════════════════════════════
      NAVIGATION
 ══════════════════════════════════════ -->
-<nav class="nav-wrap sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[66px] flex items-center justify-between">
-        <!-- Logo -->
-        <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
-            <div class="w-9 h-9 bg-gradient-to-br from-mint to-primary rounded-lg grid place-items-center font-black text-primary-deeper shadow-lg text-lg">P</div>
-            <div class="leading-none">
-                <div class="text-primary font-bold text-sm tracking-wider">PANCO PROSPERITY</div>
-                <div class="text-primary-dark/75 text-[10px] tracking-widest uppercase font-semibold">Trade Limited</div>
-            </div>
-        </a>
-
-        <!-- Desktop Links -->
-        <div class="hidden md:flex items-center gap-10">
-            <a href="wf-index.html" class="text-primary font-bold text-sm border-b-2 border-primary pb-0.5">หน้าแรก</a>
-            <a href="wf-about.html" class="text-primary-deeper/70 hover:text-primary text-sm font-medium transition-colors">สินค้า &amp; แคตตาล็อก</a>
-            <a href="wf-products.html" class="text-primary-deeper/70 hover:text-primary text-sm font-medium transition-colors">ติดต่อเรา</a>
-            <a href="wf-products.html#inquiry" class="bg-gradient-to-r from-primary to-primary-dark hover:opacity-90 text-white font-bold text-sm px-6 py-2.5 rounded-full transition-all shadow-md">
-                ขอใบเสนอราคา
-            </a>
-        </div>
-
-        <!-- Hamburger -->
-        <button id="ham" class="md:hidden text-primary p-2 rounded-lg hover:bg-black/5" aria-label="menu">
-            <svg id="ham-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mob-menu" class="md:hidden px-5 border-t border-primary/15 bg-white/95 backdrop-blur-md">
-        <div class="py-4 flex flex-col gap-4">
-            <a href="wf-index.html" class="text-primary font-bold text-sm">หน้าแรก</a>
-            <a href="wf-about.html" class="text-primary-deeper/70 text-sm font-medium">สินค้า &amp; แคตตาล็อก</a>
-            <a href="wf-products.html" class="text-primary-deeper/70 text-sm font-medium">ติดต่อเรา</a>
-            <a href="wf-products.html#inquiry" class="bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-sm px-6 py-2.5 rounded-full text-center">ขอใบเสนอราคา</a>
-        </div>
-    </div>
-</nav>
-
-<!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
-<section class="hero-wrap flex items-center relative" id="hero">
-    <!-- Decorative rings -->
-    <div class="absolute top-16 right-20 w-80 h-80 rounded-full border border-mint/10 hidden lg:block pointer-events-none"></div>
-    <div class="absolute top-32 right-32 w-52 h-52 rounded-full border border-white/5 hidden lg:block pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Left: Text -->
-        <div class="reveal">
-            <div class="inline-flex items-center gap-2 bg-mint/10 border border-mint/30 rounded-full px-4 py-1.5 mb-8">
-                <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse"></span>
-                <span class="text-mint text-xs font-bold tracking-widest uppercase">ISO 9001:2008 Certified · ก่อตั้งปี 2544</span>
-            </div>
-
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                From Materials<br>
-                <span class="text-mint-grad">to Products</span>
-            </h1>
-
-            <p class="text-gray-300 text-lg leading-relaxed mb-4 border-l-4 border-sky pl-5">
-                ผู้นำด้านอุตสาหกรรมการลามิเนท วัสดุคุณภาพสูงจากเครื่องจักร<br>
-                <strong class="text-mint">80 นิ้ว</strong> ที่กว้างที่สุดในภูมิภาค
-                กำลังผลิต <strong class="text-mint">38,000 หลา/วัน</strong>
-            </p>
-
-            <div class="flex flex-wrap gap-4 mt-8">
-                <a href="wf-about.html" class="bg-gradient-to-r from-mint to-sky hover:opacity-90 text-primary-deeper font-bold px-8 py-3.5 rounded-full transition-all shadow-[0_0_25px_rgba(114,239,221,.3)]">
-                    🧵 ดูสินค้าทั้งหมด
-                </a>
-                <a href="wf-products.html" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-3.5 rounded-full transition-all">
-                    📞 ติดต่อเรา
-                </a>
-            </div>
-        </div>
-
-        <!-- Right: Feature Cards -->
-        <div class="grid grid-cols-2 gap-4 reveal">
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
-                <div class="skew-x-[15deg]">
-                    <div class="text-4xl font-black text-mint mb-2 stat-num">38k</div>
-                    <div class="text-white font-semibold text-sm">หลา / 8 ชั่วโมง</div>
-                    <div class="text-gray-400 text-xs mt-1">กำลังการผลิตสูงสุด</div>
-                </div>
-            </div>
-            <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-6 border border-primary/20 skew-x-[-15deg]">
-                <div class="skew-x-[15deg]">
-                    <div class="text-4xl font-black text-mint mb-2 stat-num">80"</div>
-                    <div class="text-white font-semibold text-sm">หน้ากว้างลามิเนท</div>
-                    <div class="text-mint/70 text-xs mt-1">Exclusive Technology</div>
-                </div>
-            </div>
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
-                <div class="skew-x-[15deg]">
-                    <div class="text-4xl font-black text-white mb-2 stat-num">25+</div>
-                    <div class="text-white font-semibold text-sm">ปีประสบการณ์</div>
-                    <div class="text-gray-400 text-xs mt-1">ก่อตั้งปี 2544</div>
-                </div>
-            </div>
-            <div class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
-                <div class="skew-x-[15deg]">
-                    <div class="text-4xl font-black text-mint mb-2 stat-num">21</div>
-                    <div class="text-white font-semibold text-sm">รายการสินค้า</div>
-                    <div class="text-gray-400 text-xs mt-1">วัสดุ &amp; บริการ</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     INDUSTRIES — 4 IMAGE CARDS
-══════════════════════════════════════ -->
-<section class="py-20 bg-white" id="industries">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="text-center mb-12 reveal">
-            <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">กลุ่มอุตสาหกรรม</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper">วัสดุของเราถูกใช้ในอุตสาหกรรมชั้นนำ</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:pb-12">
-            <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal">
-                <img src="https://placehold.co/600x400/e2e8f0/1e293b?text=Footwear+Industry+Placeholder" alt="รองเท้า" class="w-full h-full object-cover">
-                <div class="overlay-text">
-                    <div class="font-bold text-white text-base">รองเท้า &amp; Sport</div>
-                    <div class="text-white/65 text-xs">Footwear Industry</div>
-                </div>
-            </div>
-            <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal md:translate-y-8">
-                <img src="https://placehold.co/600x400/e2e8f0/1e293b?text=Handbag+Industry+Placeholder" alt="กระเป๋า" class="w-full h-full object-cover">
-                <div class="overlay-text">
-                    <div class="font-bold text-white text-base">กระเป๋า</div>
-                    <div class="text-white/65 text-xs">Handbag Industry</div>
-                </div>
-            </div>
-            <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal">
-                <img src="https://placehold.co/600x600/e2e8f0/1e293b?text=Furniture+Industry+Placeholder" alt="เฟอร์นิเจอร์" class="w-full h-full object-cover">
-                <div class="overlay-text">
-                    <div class="font-bold text-white text-base">เฟอร์นิเจอร์</div>
-                    <div class="text-white/65 text-xs">Furniture Industry</div>
-                </div>
-            </div>
-            <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal md:translate-y-8">
-                <img src="https://placehold.co/600x400/e2e8f0/1e293b?text=Automotive+Industry+Placeholder" alt="ยานยนต์" class="w-full h-full object-cover">
-                <div class="overlay-text">
-                    <div class="font-bold text-white text-base">ยานยนต์</div>
-                    <div class="text-white/65 text-xs">Automotive Industry</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     ABOUT SPLIT (Image Left / Text Right)
-══════════════════════════════════════ -->
-<section class="py-20 bg-surface" id="about">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Image Collage (Broken Grid / Overlapping Diamond Grid) -->
-        <div class="relative h-[480px] w-full flex items-center justify-center reveal">
-            <!-- Background accent decorative diamonds -->
-            <div class="absolute top-10 left-10 w-36 h-36 rotate-45 bg-mint/5 border border-mint/20 rounded-3xl -z-10 hidden sm:block"></div>
-            <div class="absolute bottom-16 right-10 w-24 h-24 rotate-45 bg-gradient-to-br from-primary/10 to-sky/10 rounded-2xl -z-10 hidden sm:block"></div>
-            
-            <!-- Secondary Image Diamond (bottom-left) -->
-            <div class="absolute w-36 h-36 bottom-6 left-6 rotate-45 overflow-hidden rounded-3xl border-4 border-white shadow-lg z-10 hidden sm:block">
-                <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Lamination+Process" alt="Lamination" class="-rotate-45 scale-[1.4] w-full h-full object-cover">
-            </div>
-
-            <!-- Main Image Diamond -->
-            <div class="absolute w-64 h-64 rotate-45 overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl z-10">
-                <img src="https://placehold.co/600x600/e2e8f0/1e293b?text=Panco+Factory" alt="โรงงาน Panco" class="-rotate-45 scale-[1.4] w-full h-full object-cover">
-            </div>
-
-            <!-- Accent Gradient Diamond (top-right) -->
-            <div class="absolute w-24 h-24 top-6 right-12 rotate-45 overflow-hidden rounded-2xl border-4 border-white bg-gradient-to-br from-primary to-primary-dark shadow-lg opacity-85 z-10 hidden sm:block">
-                <div class="-rotate-45 w-full h-full flex flex-col items-center justify-center text-center p-2">
-                    <span class="font-black text-mint text-xl leading-none">ISO</span>
-                    <span class="text-white text-[9px] font-bold mt-1 tracking-wider uppercase">Certified</span>
-                </div>
-            </div>
-
-            <!-- Overlapping Slanted Stat Badge (bottom-left, overlapping Main Diamond) -->
-            <div class="absolute bottom-6 left-12 sm:left-4 bg-gradient-to-r from-primary to-primary-dark text-white py-3.5 px-6 rounded-xl shadow-2xl skew-x-[-15deg] border-r-4 border-mint z-20">
-                <div class="skew-x-[15deg] flex items-center gap-3">
-                    <div class="font-black text-2xl text-mint leading-none">25+</div>
-                    <div class="text-[10px] leading-tight font-bold uppercase tracking-wider text-gray-200">Years<br>Experience</div>
-                </div>
-            </div>
-
-            <!-- Overlapping Slanted ISO Badge (top-right, overlapping Main Diamond) -->
-            <div class="absolute top-12 right-12 sm:right-6 bg-gradient-to-r from-mint to-sky text-primary-deeper py-2.5 px-5 rounded-xl shadow-xl skew-x-[15deg] border-l-4 border-primary z-20">
-                <div class="-skew-x-[15deg] flex items-center gap-2">
-                    <div class="font-black text-lg leading-none">9001:2008</div>
-                    <div class="text-[8px] leading-tight font-black uppercase tracking-widest text-primary-deeper/80">Quality<br>System</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Text -->
-        <div class="reveal">
-            <p class="text-primary text-sm font-bold tracking-widest uppercase mb-4">เกี่ยวกับเรา</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper mb-6 leading-tight">
-                บริษัท แพนโก้<br>พรอสเพอริตี้ เทรด จำกัด
-            </h2>
-            <p class="text-muted text-lg leading-relaxed mb-5">
-                ก่อตั้งเมื่อ <strong class="text-primary-deeper">14 มีนาคม 2544</strong> ทุนจดทะเบียน 10 ล้านบาท
-                เราเป็นผู้เชี่ยวชาญด้านการผลิตวัสดุลามิเนทและวัสดุอุตสาหกรรม
-                ด้วยเครื่องจักรหน้ากว้าง 80 นิ้วที่ทำงานเร็วกว่าเครื่องทั่วไป 1.5 เท่า
-            </p>
-            <div class="space-y-4 mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">✓</div>
-                    <span class="text-primary-deeper font-medium">กำลังผลิตสูงถึง 38,000 หลา ต่อ 8 ชั่วโมง</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">✓</div>
-                    <span class="text-primary-deeper font-medium">เครื่องลามิเนทหน้ากว้าง 80 นิ้ว ผู้เดียวในภูมิภาค</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">✓</div>
-                    <span class="text-primary-deeper font-medium">ผ่านมาตรฐาน ISO 9001:2008 โดย URS UKAS</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-green-50 rounded-lg grid place-items-center text-green-600 text-sm flex-shrink-0">✓</div>
-                    <span class="text-primary-deeper font-medium">ระบบบำบัดน้ำเสีย Recycling — ใส่ใจสิ่งแวดล้อม</span>
-                </div>
-            </div>
-            <a href="wf-products.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark text-white font-bold px-7 py-3.5 rounded-full hover:opacity-95 transition-all shadow-lg">
-                ติดต่อขอใบเสนอราคา
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     DARK CAPABILITIES SECTION
-══════════════════════════════════════ -->
-<section class="dark-section pt-28 pb-28 text-white animate-slant" id="capabilities">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="text-center mb-14 reveal">
-            <p class="text-mint text-sm font-bold tracking-widest uppercase mb-3">ศักยภาพการผลิต</p>
-            <h2 class="text-3xl md:text-4xl font-bold">ขีดความสามารถที่เหนือกว่า</h2>
-            <p class="text-gray-400 mt-3 max-w-lg mx-auto text-sm">เทคโนโลยีนำเข้าพิเศษ ทำงานได้เร็ว แม่นยำ และรองรับออเดอร์ขนาดใหญ่</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 mt-12">
-            <!-- Cap 1 -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-mint/40 relative">
-                <div class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-mint">
-                    <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                </div>
-                <div class="text-3xl font-black text-mint mb-2">38,000</div>
-                <div class="font-semibold mb-2 text-sm text-white">หลา / 8 ชั่วโมง</div>
-                <p class="text-gray-400 text-xs leading-relaxed">กำลังผลิตสูงสุด รองรับออเดอร์ขนาดใหญ่จากโรงงาน</p>
-            </div>
-            <!-- Cap 2 (Solid Card with primary gradient) -->
-            <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl px-6 pb-6 pt-10 card reveal text-white border border-primary/20 relative">
-                <div class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-mint to-sky rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-primary-deeper">
-                    <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div class="text-3xl font-black mb-2 text-mint">80 นิ้ว</div>
-                <div class="font-semibold mb-2 text-sm">หน้ากว้างสูงสุด</div>
-                <p class="text-white/80 text-xs leading-relaxed">เร็วกว่าเครื่องทั่วไป 1.5 เท่า ลดรอยต่อในวัสดุ</p>
-            </div>
-            <!-- Cap 3 -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-sky/40 relative">
-                <div class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-sky">
-                    <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-                </div>
-                <div class="text-3xl font-black text-sky mb-2">ISO</div>
-                <div class="font-semibold mb-2 text-sm text-white">9001:2008</div>
-                <p class="text-gray-400 text-xs leading-relaxed">รับรองโดย URS UKAS มาตรฐานระบบคุณภาพสากล</p>
-            </div>
-            <!-- Cap 4 -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-mint/40 relative">
-                <div class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-green-400">
-                    <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-                </div>
-                <div class="text-3xl font-black text-green-400 mb-2">Eco</div>
-                <div class="font-semibold mb-2 text-sm text-white">Water Recycling</div>
-                <p class="text-gray-400 text-xs leading-relaxed">ระบบบำบัดน้ำเสียประสิทธิภาพสูง ใส่ใจสิ่งแวดล้อม</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     PRODUCT HIGHLIGHT (Text Left / Image Right)
-══════════════════════════════════════ -->
-<section class="py-20 bg-white" id="highlight">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Text -->
-        <div class="reveal order-2 lg:order-1">
-            <p class="text-primary text-sm font-bold tracking-widest uppercase mb-4">วัสดุหลัก</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper mb-6 leading-tight">
-                ครบทุกวัสดุ<br>ในที่เดียว
-            </h2>
-            <p class="text-muted leading-relaxed mb-8">
-                ไม่ว่าจะเป็นผ้า โฟม EVA หรืองานลามิเนทซับซ้อน
-                เรามีครบทุกสิ่งที่อุตสาหกรรมต้องการ
-                พร้อมบริการตัดและแปรรูปตามสเปคที่คุณกำหนด
-            </p>
-            <div class="grid grid-cols-3 gap-4 mb-8">
-                <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
-                    <div class="text-2xl mb-1">🧵</div>
-                    <div class="text-xs font-bold text-primary-deeper">8 รายการ</div>
-                    <div class="text-xs text-muted">หมวดผ้า</div>
-                </div>
-                <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
-                    <div class="text-2xl mb-1">🧽</div>
-                    <div class="text-xs font-bold text-primary-deeper">4 รายการ</div>
-                    <div class="text-xs text-muted">โฟม &amp; EVA</div>
-                </div>
-                <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
-                    <div class="text-2xl mb-1">⚙️</div>
-                    <div class="text-xs font-bold text-primary-deeper">9 รายการ</div>
-                    <div class="text-xs text-muted">งานประกบ</div>
-                </div>
-            </div>
-            <a href="wf-about.html" class="inline-flex items-center gap-2 font-bold text-primary hover:text-primary-dark transition-colors group">
-                ดูรายการสินค้าทั้งหมด
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-        </div>
-
-        <!-- Image bento -->
-        <div class="grid grid-cols-2 gap-4 reveal order-1 lg:order-2">
-            <div class="rounded-2xl overflow-hidden h-48 img-card col-span-2">
-                <img src="https://placehold.co/800x400/e2e8f0/1e293b?text=Fabric+Materials+Placeholder" alt="ผ้า" class="w-full h-full object-cover">
-            </div>
-            <div class="rounded-2xl overflow-hidden h-36 img-card">
-                <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Foam+Materials+Placeholder" alt="โฟม" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl h-36 grid place-items-center">
-                <div class="text-center">
-                    <div class="text-3xl font-black text-mint mb-1">21</div>
-                    <div class="text-white text-xs font-bold">รายการสินค้า</div>
-                    <div class="text-white/75 text-xs">&amp; บริการ</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     MORE INDUSTRIES (Full grid)
-══════════════════════════════════════ -->
-<section class="py-16 bg-surface" id="more-industries">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="text-center mb-10 reveal">
-            <h2 class="text-2xl md:text-3xl font-bold text-primary-deeper">สินค้าของเราในอีกหลายอุตสาหกรรม</h2>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-            <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
-                <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Toys+Placeholder" alt="ของเล่น" class="w-full h-full object-cover">
-                <div class="overlay-text"><div class="font-bold text-white text-sm">🧸 ของเล่น &amp; ตุ๊กตา</div></div>
-            </div>
-            <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
-                <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Brassieres+Placeholder" alt="ชุดชั้นใน" class="w-full h-full object-cover">
-                <div class="overlay-text"><div class="font-bold text-white text-sm">👗 ชุดชั้นใน</div></div>
-            </div>
-            <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
-                <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Helmets+Placeholder" alt="หมวกกันน็อค" class="w-full h-full object-cover">
-                <div class="overlay-text"><div class="font-bold text-white text-sm">⛑ หมวกกันน็อค</div></div>
-            </div>
-            <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
-                <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=General+Industry+Placeholder" alt="อุตสาหกรรมทั่วไป" class="w-full h-full object-cover">
-                <div class="overlay-text"><div class="font-bold text-white text-sm">🏭 อุตสาหกรรมทั่วไป</div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     ISO CTA BANNER
-══════════════════════════════════════ -->
-<section class="bg-gradient-to-r from-primary to-primary-dark text-white py-14 relative overflow-hidden">
-    <!-- Decorative background slanted bar -->
-    <div class="absolute right-0 top-0 w-1/3 h-full bg-mint/5 -skew-x-12 pointer-events-none"></div>
-    
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6 reveal relative z-10">
-        <div class="flex items-center gap-6">
-            <div class="w-16 h-16 bg-mint rounded-2xl grid place-items-center font-black text-primary-deeper text-sm shadow-lg leading-none text-center flex-shrink-0">
-                <span>ISO<br>9001</span>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold text-white">มาตรฐาน ISO 9001:2008</h3>
-                <p class="text-white/85 font-medium text-sm mt-1">Certified by URS UKAS · ตั้งแต่ปี 2546 · ผ่านการรับรองระดับสากล</p>
-            </div>
-        </div>
-        <a href="wf-products.html#inquiry" class="bg-mint text-primary-deeper hover:opacity-90 font-bold px-8 py-4 rounded-full transition-all shadow-lg flex items-center gap-2 flex-shrink-0">
-            ขอใบเสนอราคาวันนี้
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
-    </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
-<footer class="bg-primary-deeper text-white pt-16 pb-8 border-t border-primary-dark/15">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            <div class="lg:col-span-2">
-                <div class="flex items-center gap-3 mb-5">
-                    <div class="w-10 h-10 bg-primary text-white rounded-lg grid place-items-center font-black text-lg">P</div>
-                    <div>
-                        <div class="font-bold text-lg tracking-wide text-white">PANCO PROSPERITY</div>
-                        <div class="text-xs text-gray-400 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>
+    <nav class="nav-wrap sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[66px] flex items-center justify-between">
+            <!-- Logo -->
+            <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
+                <img src="images/logo.png" alt="Panco Prosperity Logo"
+                    class="w-9 h-9 rounded-lg object-cover border border-brand-primary/20 bg-white">
+                <div class="leading-none">
+                    <div class="text-primary font-bold text-sm tracking-wider">PANCO PROSPERITY</div>
+                    <div class="text-primary-dark/75 text-[10px] tracking-widest uppercase font-semibold">Trade Limited
                     </div>
                 </div>
-                <p class="text-gray-300 text-sm leading-relaxed max-w-xs mb-5">ผู้เชี่ยวชาญด้านการลามิเนทวัสดุอุตสาหกรรมหน้ากว้าง 80 นิ้ว มาตรฐาน ISO 9001:2008 กว่า 25 ปี</p>
-                <div class="inline-flex items-center gap-2 text-xs text-mint font-bold">
-                    <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
-                    เปิดทำการ จ.-ศ. 08:00–17:00 น.
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-10">
+                <a href="wf-index.html"
+                    class="text-primary font-bold text-sm border-b-2 border-primary pb-0.5">หน้าแรก</a>
+                <a href="wf-about.html"
+                    class="text-primary-deeper/70 hover:text-primary text-sm font-medium transition-colors">สินค้า &amp;
+                    แคตตาล็อก</a>
+                <a href="wf-products.html"
+                    class="text-primary-deeper/70 hover:text-primary text-sm font-medium transition-colors">ติดต่อเรา</a>
+                <a href="wf-products.html#inquiry"
+                    class="bg-gradient-to-r from-primary to-primary-dark hover:opacity-90 text-white font-bold text-sm px-6 py-2.5 rounded-full transition-all shadow-md">
+                    ขอใบเสนอราคา
+                </a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="ham" class="md:hidden text-primary p-2 rounded-lg hover:bg-black/5" aria-label="menu">
+                <svg id="ham-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mob-menu" class="md:hidden px-5 border-t border-primary/15 bg-white/95 backdrop-blur-md">
+            <div class="py-4 flex flex-col gap-4">
+                <a href="wf-index.html" class="text-primary font-bold text-sm">หน้าแรก</a>
+                <a href="wf-about.html" class="text-primary-deeper/70 text-sm font-medium">สินค้า &amp; แคตตาล็อก</a>
+                <a href="wf-products.html" class="text-primary-deeper/70 text-sm font-medium">ติดต่อเรา</a>
+                <a href="wf-products.html#inquiry"
+                    class="bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-sm px-6 py-2.5 rounded-full text-center">ขอใบเสนอราคา</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+    <section class="hero-wrap flex items-center relative" id="hero">
+        <!-- Decorative rings -->
+        <div
+            class="absolute top-16 right-20 w-80 h-80 rounded-full border border-mint/10 hidden lg:block pointer-events-none">
+        </div>
+        <div
+            class="absolute top-32 right-32 w-52 h-52 rounded-full border border-white/5 hidden lg:block pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="reveal">
+                <div
+                    class="inline-flex items-center gap-2 bg-mint/10 border border-mint/30 rounded-full px-4 py-1.5 mb-8">
+                    <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse"></span>
+                    <span class="text-mint text-xs font-bold tracking-widest uppercase">ISO 9001:2008 Certified ·
+                        ก่อตั้งปี 2544</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    From Materials<br>
+                    <span class="text-mint-grad">to Products</span>
+                </h1>
+
+                <p class="text-gray-300 text-lg leading-relaxed mb-4 border-l-4 border-sky pl-5">
+                    ผู้นำด้านอุตสาหกรรมการลามิเนท วัสดุคุณภาพสูงจากเครื่องจักร<br>
+                    <strong class="text-mint">80 นิ้ว</strong> ที่กว้างที่สุดในภูมิภาค
+                    กำลังผลิต <strong class="text-mint">38,000 หลา/วัน</strong>
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="wf-about.html"
+                        class="bg-gradient-to-r from-mint to-sky hover:opacity-90 text-primary-deeper font-bold px-8 py-3.5 rounded-full transition-all shadow-[0_0_25px_rgba(114,239,221,.3)]">
+                        🧵 ดูสินค้าทั้งหมด
+                    </a>
+                    <a href="wf-products.html"
+                        class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-3.5 rounded-full transition-all">
+                        📞 ติดต่อเรา
+                    </a>
                 </div>
             </div>
-            <div>
-                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">เมนูหลัก</h4>
-                <ul class="space-y-3 text-sm text-gray-300">
-                    <li><a href="wf-index.html" class="hover:text-mint font-semibold transition-colors">หน้าแรก</a></li>
-                    <li><a href="wf-about.html" class="hover:text-mint font-semibold transition-colors">สินค้า &amp; แคตตาล็อก</a></li>
-                    <li><a href="wf-products.html" class="hover:text-mint font-semibold transition-colors">ติดต่อเรา</a></li>
-                    <li><a href="wf-products.html#inquiry" class="hover:text-mint font-semibold transition-colors">ขอใบเสนอราคา</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">ติดต่อเรา</h4>
-                <ul class="space-y-3 text-sm text-gray-300">
-                    <li class="flex items-start gap-2"><span class="text-mint mt-0.5">📍</span><span>192 ถ.หทัยราษฎร์ บางชัน คลองสามวา กรุงเทพฯ 10510</span></li>
-                    <li class="flex items-center gap-2"><span class="text-mint font-bold">📞</span>0-2906-5335-8</li>
-                    <li class="flex items-center gap-2"><span class="text-mint font-bold">📠</span>0-2906-5339</li>
-                    <li class="flex items-center gap-2"><span class="text-mint font-bold">✉️</span>panco192@hotmail.com</li>
-                </ul>
+
+            <!-- Right: Feature Cards -->
+            <div class="grid grid-cols-2 gap-4 reveal">
+                <div
+                    class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                    <div class="skew-x-[15deg]">
+                        <div class="text-4xl font-black text-mint mb-2 stat-num">38k</div>
+                        <div class="text-white font-semibold text-sm">หลา / 8 ชั่วโมง</div>
+                        <div class="text-gray-400 text-xs mt-1">กำลังการผลิตสูงสุด</div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-6 border border-primary/20 skew-x-[-15deg]">
+                    <div class="skew-x-[15deg]">
+                        <div class="text-4xl font-black text-mint mb-2 stat-num">80"</div>
+                        <div class="text-white font-semibold text-sm">หน้ากว้างลามิเนท</div>
+                        <div class="text-mint/70 text-xs mt-1">Exclusive Technology</div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                    <div class="skew-x-[15deg]">
+                        <div class="text-4xl font-black text-white mb-2 stat-num">25+</div>
+                        <div class="text-white font-semibold text-sm">ปีประสบการณ์</div>
+                        <div class="text-gray-400 text-xs mt-1">ก่อตั้งปี 2544</div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/8 backdrop-blur border border-white/12 rounded-2xl p-6 hover:border-mint/40 transition-colors skew-x-[-15deg]">
+                    <div class="skew-x-[15deg]">
+                        <div class="text-4xl font-black text-mint mb-2 stat-num">21</div>
+                        <div class="text-white font-semibold text-sm">รายการสินค้า</div>
+                        <div class="text-gray-400 text-xs mt-1">วัสดุ &amp; บริการ</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
-            <p>&copy; 2026 Panco Prosperity Trade Ltd. All rights reserved.</p>
-            <div class="flex gap-3">
-                <span class="bg-white/10 text-mint px-3 py-1 rounded-full border border-mint/20 font-bold">ISO 9001:2008</span>
-                <span class="bg-white/5 text-gray-300 px-3 py-1 rounded-full border border-white/10 font-medium">URS UKAS</span>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     INDUSTRIES — 4 IMAGE CARDS
+══════════════════════════════════════ -->
+    <section class="py-20 bg-white" id="industries">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-12 reveal">
+                <p class="text-primary text-xs font-bold tracking-widest uppercase mb-3">กลุ่มอุตสาหกรรม</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper">วัสดุของเราถูกใช้ในอุตสาหกรรมชั้นนำ</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:pb-12">
+                <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal">
+                    <img src="https://lh5.googleusercontent.com/proxy/rOKOmgUocsnadHMcJmFWlHpChXGeYXUmrQtS3xEffwU00hR-N3xsDKWOfWbjmPxktXnba7LLmxDjB-F_9GsqwiUPoyL0eWO1MR9pU2ODpb6AR8ji4AfDWGIpJC2GjZzFPVsl5XbPevVUXGaizEEz7E0smTZ_uJXevLVCwkrTuO-3qA"
+                        alt="รองเท้า" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-base">รองเท้า &amp; Sport</div>
+                        <div class="text-white/65 text-xs">Footwear Industry</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal md:translate-y-8">
+                    <img src="https://www.vue.ai/blog/wp-content/uploads/2019/04/shutterstock_524621773.jpg"
+                        alt="กระเป๋า" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-base">กระเป๋า</div>
+                        <div class="text-white/65 text-xs">Handbag Industry</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal">
+                    <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=600"
+                        alt="เฟอร์นิเจอร์" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-base">เฟอร์นิเจอร์</div>
+                        <div class="text-white/65 text-xs">Furniture Industry</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-2xl overflow-hidden h-56 shadow-md reveal md:translate-y-8">
+                    <img src="https://iirorwxhnnpnlq5m.ldycdn.com/cloud/jmBprKqplqSRikjmqqnrjq/cheneishi2.jpg"
+                        alt="ยานยนต์" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-base">ยานยนต์</div>
+                        <div class="text-white/65 text-xs">Automotive Industry</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-    // Mobile menu
-    document.getElementById('ham').addEventListener('click', function() {
-        document.getElementById('mob-menu').classList.toggle('open');
-    });
+    <!-- ══════════════════════════════════════
+     ABOUT SPLIT (Image Left / Text Right)
+══════════════════════════════════════ -->
+    <section class="py-20 bg-surface" id="about">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Image Collage (Broken Grid / Overlapping Diamond Grid) -->
+            <div class="relative h-[480px] w-full flex items-center justify-center reveal">
+                <!-- Background accent decorative diamonds -->
+                <div
+                    class="absolute top-10 left-10 w-36 h-36 rotate-45 bg-mint/5 border border-mint/20 rounded-3xl -z-10 hidden sm:block">
+                </div>
+                <div
+                    class="absolute bottom-16 right-10 w-24 h-24 rotate-45 bg-gradient-to-br from-primary/10 to-sky/10 rounded-2xl -z-10 hidden sm:block">
+                </div>
 
-    // Scroll progress
-    window.addEventListener('scroll', function() {
-        const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-        document.getElementById('scprog').style.width = p + '%';
-    });
+                <!-- Secondary Image Diamond (bottom-left) -->
+                <div
+                    class="absolute w-36 h-36 bottom-6 left-6 rotate-45 overflow-hidden rounded-3xl border-4 border-white shadow-lg z-10 hidden sm:block">
+                    <img src="images/IMG_6590.JPG" alt="Lamination"
+                        class="-rotate-45 scale-[1.4] w-full h-full object-cover">
+                </div>
 
-    // Reveal on scroll
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('show'); observer.unobserve(e.target); }
+                <!-- Main Image Diamond -->
+                <div
+                    class="absolute w-64 h-64 rotate-45 overflow-hidden rounded-[2.5rem] border-4 border-white shadow-2xl z-10">
+                    <img src="images/IMG_6587.JPG" alt="โรงงาน Panco"
+                        class="-rotate-45 scale-[1.4] w-full h-full object-cover">
+                </div>
+
+                <!-- Accent Gradient Diamond (top-right) -->
+                <div
+                    class="absolute w-24 h-24 top-6 right-12 rotate-45 overflow-hidden rounded-2xl border-4 border-white bg-gradient-to-br from-primary to-primary-dark shadow-lg opacity-85 z-10 hidden sm:block">
+                    <div class="-rotate-45 w-full h-full flex flex-col items-center justify-center text-center p-2">
+                        <span class="font-black text-mint text-xl leading-none">ISO</span>
+                        <span class="text-white text-[9px] font-bold mt-1 tracking-wider uppercase">Certified</span>
+                    </div>
+                </div>
+
+                <!-- Overlapping Slanted Stat Badge (bottom-left, overlapping Main Diamond) -->
+                <div
+                    class="absolute bottom-6 left-12 sm:left-4 bg-gradient-to-r from-primary to-primary-dark text-white py-3.5 px-6 rounded-xl shadow-2xl skew-x-[-15deg] border-r-4 border-mint z-20">
+                    <div class="skew-x-[15deg] flex items-center gap-3">
+                        <div class="font-black text-2xl text-mint leading-none">25+</div>
+                        <div class="text-[10px] leading-tight font-bold uppercase tracking-wider text-gray-200">
+                            Years<br>Experience</div>
+                    </div>
+                </div>
+
+                <!-- Overlapping Slanted ISO Badge (top-right, overlapping Main Diamond) -->
+                <div
+                    class="absolute top-12 right-12 sm:right-6 bg-gradient-to-r from-mint to-sky text-primary-deeper py-2.5 px-5 rounded-xl shadow-xl skew-x-[15deg] border-l-4 border-primary z-20">
+                    <div class="-skew-x-[15deg] flex items-center gap-2">
+                        <div class="font-black text-lg leading-none">9001:2008</div>
+                        <div
+                            class="text-[8px] leading-tight font-black uppercase tracking-widest text-primary-deeper/80">
+                            Quality<br>System</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text -->
+            <div class="reveal">
+                <p class="text-primary text-sm font-bold tracking-widest uppercase mb-4">เกี่ยวกับเรา</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper mb-6 leading-tight">
+                    บริษัท แพนโก้<br>พรอสเพอริตี้ เทรด จำกัด
+                </h2>
+                <p class="text-muted text-lg leading-relaxed mb-5">
+                    ก่อตั้งเมื่อ <strong class="text-primary-deeper">14 มีนาคม 2544</strong> ทุนจดทะเบียน 10 ล้านบาท
+                    เราเป็นผู้เชี่ยวชาญด้านการผลิตวัสดุลามิเนทและวัสดุอุตสาหกรรม
+                    ด้วยเครื่องจักรหน้ากว้าง 80 นิ้วที่ทำงานเร็วกว่าเครื่องทั่วไป 1.5 เท่า
+                </p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">
+                            ✓</div>
+                        <span class="text-primary-deeper font-medium">กำลังผลิตสูงถึง 38,000 หลา ต่อ 8 ชั่วโมง</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">
+                            ✓</div>
+                        <span class="text-primary-deeper font-medium">เครื่องลามิเนทหน้ากว้าง 80 นิ้ว
+                            ผู้เดียวในภูมิภาค</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-primary/10 rounded-lg grid place-items-center text-primary text-sm flex-shrink-0">
+                            ✓</div>
+                        <span class="text-primary-deeper font-medium">ผ่านมาตรฐาน ISO 9001:2008 โดย URS UKAS</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-green-50 rounded-lg grid place-items-center text-green-600 text-sm flex-shrink-0">
+                            ✓</div>
+                        <span class="text-primary-deeper font-medium">ระบบบำบัดน้ำเสีย Recycling —
+                            ใส่ใจสิ่งแวดล้อม</span>
+                    </div>
+                </div>
+                <a href="wf-products.html"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-dark text-white font-bold px-7 py-3.5 rounded-full hover:opacity-95 transition-all shadow-lg">
+                    ติดต่อขอใบเสนอราคา
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     DARK CAPABILITIES SECTION
+══════════════════════════════════════ -->
+    <section class="dark-section pt-28 pb-28 text-white animate-slant" id="capabilities">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-14 reveal">
+                <p class="text-mint text-sm font-bold tracking-widest uppercase mb-3">ศักยภาพการผลิต</p>
+                <h2 class="text-3xl md:text-4xl font-bold">ขีดความสามารถที่เหนือกว่า</h2>
+                <p class="text-gray-400 mt-3 max-w-lg mx-auto text-sm">เทคโนโลยีนำเข้าพิเศษ ทำงานได้เร็ว แม่นยำ
+                    และรองรับออเดอร์ขนาดใหญ่</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 mt-12">
+                <!-- Cap 1 -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-mint/40 relative">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-mint">
+                        <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-black text-mint mb-2">38,000</div>
+                    <div class="font-semibold mb-2 text-sm text-white">หลา / 8 ชั่วโมง</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">กำลังผลิตสูงสุด รองรับออเดอร์ขนาดใหญ่จากโรงงาน</p>
+                </div>
+                <!-- Cap 2 (Solid Card with primary gradient) -->
+                <div
+                    class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl px-6 pb-6 pt-10 card reveal text-white border border-primary/20 relative">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-mint to-sky rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-primary-deeper">
+                        <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-black mb-2 text-mint">80 นิ้ว</div>
+                    <div class="font-semibold mb-2 text-sm">หน้ากว้างสูงสุด</div>
+                    <p class="text-white/80 text-xs leading-relaxed">เร็วกว่าเครื่องทั่วไป 1.5 เท่า ลดรอยต่อในวัสดุ</p>
+                </div>
+                <!-- Cap 3 -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-sky/40 relative">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-sky">
+                        <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-black text-sky mb-2">ISO</div>
+                    <div class="font-semibold mb-2 text-sm text-white">9001:2008</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">รับรองโดย URS UKAS มาตรฐานระบบคุณภาพสากล</p>
+                </div>
+                <!-- Cap 4 -->
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl px-6 pb-6 pt-10 card reveal hover:border-mint/40 relative">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rotate-45 flex items-center justify-center shadow-lg border border-white/10 text-green-400">
+                        <svg class="w-6 h-6 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-black text-green-400 mb-2">Eco</div>
+                    <div class="font-semibold mb-2 text-sm text-white">Water Recycling</div>
+                    <p class="text-gray-400 text-xs leading-relaxed">ระบบบำบัดน้ำเสียประสิทธิภาพสูง ใส่ใจสิ่งแวดล้อม</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     PRODUCT HIGHLIGHT (Text Left / Image Right)
+══════════════════════════════════════ -->
+    <section class="py-20 bg-white" id="highlight">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Text -->
+            <div class="reveal order-2 lg:order-1">
+                <p class="text-primary text-sm font-bold tracking-widest uppercase mb-4">วัสดุหลัก</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-deeper mb-6 leading-tight">
+                    ครบทุกวัสดุ<br>ในที่เดียว
+                </h2>
+                <p class="text-muted leading-relaxed mb-8">
+                    ไม่ว่าจะเป็นผ้า โฟม EVA หรืองานลามิเนทซับซ้อน
+                    เรามีครบทุกสิ่งที่อุตสาหกรรมต้องการ
+                    พร้อมบริการตัดและแปรรูปตามสเปคที่คุณกำหนด
+                </p>
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
+                        <div class="text-2xl mb-1">🧵</div>
+                        <div class="text-xs font-bold text-primary-deeper">8 รายการ</div>
+                        <div class="text-xs text-muted">หมวดผ้า</div>
+                    </div>
+                    <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
+                        <div class="text-2xl mb-1">🧽</div>
+                        <div class="text-xs font-bold text-primary-deeper">4 รายการ</div>
+                        <div class="text-xs text-muted">โฟม &amp; EVA</div>
+                    </div>
+                    <div class="bg-surface rounded-2xl p-4 text-center border border-gray-100">
+                        <div class="text-2xl mb-1">⚙️</div>
+                        <div class="text-xs font-bold text-primary-deeper">9 รายการ</div>
+                        <div class="text-xs text-muted">งานประกบ</div>
+                    </div>
+                </div>
+                <a href="wf-about.html"
+                    class="inline-flex items-center gap-2 font-bold text-primary hover:text-primary-dark transition-colors group">
+                    ดูรายการสินค้าทั้งหมด
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Image bento -->
+            <div class="grid grid-cols-2 gap-4 reveal order-1 lg:order-2">
+                <div class="rounded-2xl overflow-hidden h-48 img-card col-span-2">
+                    <img src="images/IMG_6674.JPG" alt="ผ้า" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-36 img-card">
+                    <img src="images/IMG_6658.JPG" alt="โฟม" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-2xl h-36 grid place-items-center">
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-mint mb-1">21</div>
+                        <div class="text-white text-xs font-bold">รายการสินค้า</div>
+                        <div class="text-white/75 text-xs">&amp; บริการ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     MORE INDUSTRIES (Full grid)
+══════════════════════════════════════ -->
+    <section class="py-16 bg-surface" id="more-industries">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="text-center mb-10 reveal">
+                <h2 class="text-2xl md:text-3xl font-bold text-primary-deeper">สินค้าของเราในอีกหลายอุตสาหกรรม</h2>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+                <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSovm_0GkgyClqSGKkrRGw4rfC68tzck2qwUA&s"
+                        alt="ของเล่น" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-sm">🧸 ของเล่น &amp; ตุ๊กตา</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=500"
+                        alt="ชุดชั้นใน" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-sm">👗 ชุดชั้นใน</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
+                    <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&q=80&w=500"
+                        alt="หมวกกันน็อค" class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-sm">⛑ หมวกกันน็อค</div>
+                    </div>
+                </div>
+                <div class="img-card rounded-xl overflow-hidden h-40 shadow-sm reveal">
+                    <img src="https://www.trs.co.th/images/upload/I0039.jpg" alt="อุตสาหกรรมทั่วไป"
+                        class="w-full h-full object-cover">
+                    <div class="overlay-text">
+                        <div class="font-bold text-white text-sm">🏭 อุตสาหกรรมทั่วไป</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     ISO CTA BANNER
+══════════════════════════════════════ -->
+    <section class="bg-gradient-to-r from-primary to-primary-dark text-white py-14 relative overflow-hidden">
+        <!-- Decorative background slanted bar -->
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-mint/5 -skew-x-12 pointer-events-none"></div>
+
+        <div
+            class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6 reveal relative z-10">
+            <div class="flex items-center gap-6">
+                <div
+                    class="w-16 h-16 bg-mint rounded-2xl grid place-items-center font-black text-primary-deeper text-sm shadow-lg leading-none text-center flex-shrink-0">
+                    <span>ISO<br>9001</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">มาตรฐาน ISO 9001:2008</h3>
+                    <p class="text-white/85 font-medium text-sm mt-1">Certified by URS UKAS · ตั้งแต่ปี 2546 ·
+                        ผ่านการรับรองระดับสากล</p>
+                </div>
+            </div>
+            <a href="wf-products.html#inquiry"
+                class="bg-mint text-primary-deeper hover:opacity-90 font-bold px-8 py-4 rounded-full transition-all shadow-lg flex items-center gap-2 flex-shrink-0">
+                ขอใบเสนอราคาวันนี้
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+    <footer class="bg-primary-deeper text-white pt-16 pb-8 border-t border-primary-dark/15">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="images/logo.png" alt="Panco Prosperity Logo"
+                            class="w-10 h-10 rounded-lg object-cover border border-primary/20 bg-white">
+                        <div>
+                            <div class="font-bold text-lg tracking-wide text-white">PANCO PROSPERITY</div>
+                            <div class="text-xs text-gray-400 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-xs mb-5">
+                        ผู้เชี่ยวชาญด้านการลามิเนทวัสดุอุตสาหกรรมหน้ากว้าง 80 นิ้ว มาตรฐาน ISO 9001:2008 กว่า 25 ปี</p>
+                    <div class="inline-flex items-center gap-2 text-xs text-mint font-bold">
+                        <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
+                        เปิดทำการ จ.-ศ. 08:00–17:00 น.
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">เมนูหลัก</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="wf-index.html" class="hover:text-mint font-semibold transition-colors">หน้าแรก</a>
+                        </li>
+                        <li><a href="wf-about.html" class="hover:text-mint font-semibold transition-colors">สินค้า &amp;
+                                แคตตาล็อก</a></li>
+                        <li><a href="wf-products.html"
+                                class="hover:text-mint font-semibold transition-colors">ติดต่อเรา</a></li>
+                        <li><a href="wf-products.html#inquiry"
+                                class="hover:text-mint font-semibold transition-colors">ขอใบเสนอราคา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-5">ติดต่อเรา</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-mint mt-0.5">📍</span><span>192
+                                ถ.หทัยราษฎร์ บางชัน คลองสามวา กรุงเทพฯ 10510</span></li>
+                        <li class="flex items-center gap-2"><span class="text-mint font-bold">📞</span>0-2906-5335-8
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-mint font-bold">📠</span>0-2906-5339</li>
+                        <li class="flex items-center gap-2"><span
+                                class="text-mint font-bold">✉️</span>panco192@hotmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
+                <p>&copy; 2026 Panco Prosperity Trade Ltd. All rights reserved.</p>
+                <div class="flex gap-3">
+                    <span class="bg-white/10 text-mint px-3 py-1 rounded-full border border-mint/20 font-bold">ISO
+                        9001:2008</span>
+                    <span class="bg-white/5 text-gray-300 px-3 py-1 rounded-full border border-white/10 font-medium">URS
+                        UKAS</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        document.getElementById('ham').addEventListener('click', function () {
+            document.getElementById('mob-menu').classList.toggle('open');
         });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+
+        // Scroll progress
+        window.addEventListener('scroll', function () {
+            const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+            document.getElementById('scprog').style.width = p + '%';
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('show'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
+
 </html>

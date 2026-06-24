@@ -62,6 +62,18 @@
                         "eco-green": "#2d6a4f",
                     },
                     fontFamily: { sans: ["IBM Plex Sans Thai", "IBM Plex Sans", "sans-serif"] },
+                    fontSize: {
+                        xs: ['13px', { lineHeight: '18px' }],
+                        sm: ['15px', { lineHeight: '22px' }],
+                        base: ['17px', { lineHeight: '26px' }],
+                        lg: ['19px', { lineHeight: '28px' }],
+                        xl: ['21px', { lineHeight: '30px' }],
+                        '2xl': ['26px', { lineHeight: '34px' }],
+                        '3xl': ['32px', { lineHeight: '40px' }],
+                        '4xl': ['40px', { lineHeight: '48px' }],
+                        '5xl': ['50px', { lineHeight: '1' }],
+                        '6xl': ['62px', { lineHeight: '1' }],
+                    }
                 }
             }
         }
@@ -81,7 +93,7 @@
         .page-hero {
             background-image:
                 linear-gradient(rgba(14, 12, 43, 0.93), rgba(14, 12, 43, 0.97)),
-                url('https://placehold.co/1920x1080/1e293b/08b8e9?text=About+Company+Hero+Background');
+                url('images/factory_hero.png');
             background-size: cover;
             background-position: center;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -208,16 +220,14 @@
     </style>
 </head>
 
-<body class="antialiased bg-white text-brand-primary-dark">
+<body class="antialiased bg-white text-brand-primary-dark text-base">
 
     <div id="progress-bar" style="width:0%"></div>
 
     <nav class="nav-glass text-brand-primary-dark sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
             <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
-                <div
-                    class="w-9 h-9 bg-gradient-to-br from-brand-gold to-brand-primary rounded-lg flex items-center justify-center font-black text-brand-primary-dark text-lg shadow-lg">
-                    P</div>
+                <img src="images/logo.png" alt="Panco Prosperity Logo" class="w-9 h-9 rounded-lg object-cover border border-brand-primary/20 bg-white">
                 <div class="leading-tight">
                     <div class="font-bold text-sm tracking-wider text-brand-primary-dark">PANCO PROSPERITY</div>
                     <div class="text-[10px] text-brand-primary-dark/80 tracking-widest uppercase">Trade Limited</div>
@@ -507,22 +517,22 @@
                         <!-- Top small diamond image -->
                         <div
                             class="absolute top-4 w-24 h-24 rotate-45 overflow-hidden rounded-2xl border-4 border-white shadow-lg z-10 hover:scale-105 transition-transform duration-300">
-                            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=Fabric" alt="Fabric materials"
+                            <img src="images/IMG_6657.JPG" alt="Fabric materials"
                                 class="-rotate-45 scale-[1.4] w-full h-full object-cover">
                         </div>
 
                         <!-- Left small diamond image -->
                         <div
                             class="absolute left-0 w-28 h-28 rotate-45 overflow-hidden rounded-2xl border-4 border-white shadow-xl z-10 hover:scale-105 transition-transform duration-300">
-                            <img src="https://placehold.co/400x400/e2e8f0/1e293b?text=QC+Test" alt="QC Testing"
+                            <img src="images/qc_testing.png" alt="QC Testing"
                                 class="-rotate-45 scale-[1.4] w-full h-full object-cover">
                         </div>
 
                         <!-- Center main large diamond image -->
                         <div
                             class="absolute w-[230px] h-[230px] rotate-45 overflow-hidden rounded-3xl border-8 border-white shadow-2xl z-20 hover:scale-105 transition-all duration-300">
-                            <img src="https://placehold.co/600x600/1e293b/80ffdb?text=80-inch+Machine"
-                                alt="เครื่องจักร 80 นิ้ว" class="-rotate-45 scale-[1.4] w-full h-full object-cover">
+                            <img src="images/IMG_6587.JPG" alt="เครื่องจักร 80 นิ้ว"
+                                class="-rotate-45 scale-[1.4] w-full h-full object-cover">
                         </div>
 
                         <!-- Right small diamond badge (interactive stats) -->
@@ -736,8 +746,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Visa+Fabric"
-                            alt="ผ้าวิซ่า Visa Fabric" class="w-full h-full object-cover">
+                        <img src="images/fabrics/visa_fabric.png" alt="ผ้าวิซ่า Visa Fabric"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 01</div>
@@ -749,8 +759,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Hi-grade+Fabric"
-                            alt="ผ้าไฮเกรท Hi-grade Fabric" class="w-full h-full object-cover">
+                        <img src="images/fabrics/higrade_fabric.png" alt="ผ้าไฮเกรท Hi-grade Fabric"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 02</div>
@@ -762,8 +772,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Cosmo+Fabric" alt="ผ้า Cosmo"
-                            class="w-full h-full object-cover">
+                        <img src="images/fabrics/cosmo_fabric.png" alt="ผ้า Cosmo" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 03</div>
@@ -775,8 +784,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Spunbond+Fabric"
-                            alt="ผ้าสปันบอนด์ Spunbond" class="w-full h-full object-cover">
+                        <img src="images/fabrics/spunbond_fabric.png" alt="ผ้าสปันบอนด์ Spunbond"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 04</div>
@@ -788,7 +797,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Tricot+Fabric" alt="ทรีคอต Tricot"
+                        <img src="images/fabrics/tricot_fabric.png" alt="ทรีคอต Tricot"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -801,7 +810,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Nylex+Fabric" alt="ไนเล็กซ์ Nylex"
+                        <img src="images/fabrics/nylex_fabric.png" alt="ไนเล็กซ์ Nylex"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -814,8 +823,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=HP+Fabric" alt="ผ้า HP"
-                            class="w-full h-full object-cover">
+                        <img src="images/fabrics/hp_fabric.png" alt="ผ้า HP" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 07</div>
@@ -827,8 +835,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="fabric">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Hi-grade+Shiny+Fabric"
-                            alt="ผ้าไลเกรดเงา Hi-grade Shiny" class="w-full h-full object-cover">
+                        <img src="images/fabrics/shiny_fabric.png" alt="ผ้าไลเกรดเงา Hi-grade Shiny"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-gold uppercase tracking-widest mb-1">ITEM 08</div>
@@ -852,8 +860,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="foam">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PE+Foam" alt="PE โฟม"
-                            class="w-full h-full object-cover">
+                        <img src="images/materials/pe_foam.png" alt="PE โฟม" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 09
@@ -866,8 +873,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="foam">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PU+Foam" alt="PU โฟม"
-                            class="w-full h-full object-cover">
+                        <img src="images/materials/pu_foam.png" alt="PU โฟม" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 10
@@ -880,7 +886,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="foam">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=White+Fiber" alt="ใยสีขาว Fiber"
+                        <img src="images/materials/white_fiber.png" alt="ใยสีขาว Fiber"
                             class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -894,8 +900,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="foam">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=EVA+Material" alt="EVA Material"
-                            class="w-full h-full object-cover">
+                        <img src="images/materials/eva_foam.png" alt="EVA Material" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 13
@@ -921,8 +926,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Tricot+Foam+Lamination"
-                            alt="ทรีคอตประกบฟองน้ำ" class="w-full h-full object-cover">
+                        <img src="images/materials/tricot_foam_lamination.png" alt="ทรีคอตประกบฟองน้ำ"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary-dark uppercase tracking-widest mb-1">ITEM
@@ -935,8 +940,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PVC+PVC+Lamination"
-                            alt="PVC ประกบ PVC" class="w-full h-full object-cover">
+                        <img src="images/materials/pvc_pvc_lamination.png" alt="PVC ประกบ PVC"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary-dark uppercase tracking-widest mb-1">ITEM
@@ -949,7 +954,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PVC/PU+Adhesive+Sticker"
+                        <img src="https://image.made-in-china.com/2f0j00ydWhNLsceibJ/High-Quality-Synthetic-PVC-PU-Leather-with-Suede-Backing.webp"
                             alt="PVC/PU ประกบกาวสติ๊กเกอร์" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -963,8 +968,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Foil+PE+Foam+Lamination"
-                            alt="ฟอยล์ประกบ PE โฟม" class="w-full h-full object-cover">
+                        <img src="images/materials/foil_pe_foam.png" alt="ฟอยล์ประกบ PE โฟม"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 16
@@ -977,8 +982,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PVC/Fabric+EVA+Lamination"
-                            alt="PVC ผ้า ประกบ EVA" class="w-full h-full object-cover brightness-90">
+                        <img src="https://images.unsplash.com/photo-1598529262041-a9cce4be9fca?auto=format&fit=crop&q=80&w=500"
+                            alt="PVC ผ้า ประกบ EVA" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 17
@@ -991,8 +996,8 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=PU+Coated+Fabric" alt="ผ้าเคลือบ PU"
-                            class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=500"
+                            alt="ผ้าเคลือบ PU" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 18
@@ -1005,7 +1010,7 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Fabric+Foam+Tricot+Lamination"
+                        <img src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?auto=format&fit=crop&q=80&w=500"
                             alt="ผ้าประกบโฟม ทรีคอต" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -1019,21 +1024,21 @@
                 <div class="prod-card bg-white rounded-2xl overflow-hidden border border-brand-gray shadow-sm reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Triple+Lamination+Sandwich"
-                            alt="PVC PU ประกบโฟม ทรีคอต" class="w-full h-full object-cover hue-rotate-180">
+                        <img src="https://image.made-in-china.com/2f0j00ydWhNLsceibJ/High-Quality-Synthetic-PVC-PU-Leather-with-Suede-Backing.webp"
+                            alt="PVC PU ประกบโฟม ทรีคอต" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <div class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">ITEM 20
                         </div>
                         <h4 class="font-bold text-brand-primary-dark text-sm">PVC/PU + โฟม + ทรีคอต</h4>
-                        <p class="text-xs text-gray-500 mt-0.5">Triple Laminate Sandwich</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Triple Lamination Sandwich</p>
                     </div>
                 </div>
                 <!-- Item 21 — Service card (dark) -->
                 <div class="prod-card bg-brand-primary-dark rounded-2xl overflow-hidden shadow-lg border border-brand-primary/10 reveal"
                     data-cat="laminated">
                     <div class="h-40 overflow-hidden">
-                        <img src="https://placehold.co/500x350/e2e8f0/1e293b?text=Cutting+and+Processing+Services"
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=500"
                             alt="บริการตัดและแปรรูป" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
@@ -1105,9 +1110,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-5">
-                        <div
-                            class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center font-black text-lg">
-                            P</div>
+                        <img src="images/logo.png" alt="Panco Prosperity Logo" class="w-10 h-10 rounded-lg object-cover border border-brand-primary/20 bg-white">
                         <div>
                             <div class="font-bold text-lg tracking-wide text-white">PANCO PROSPERITY</div>
                             <div class="text-xs text-gray-400 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>

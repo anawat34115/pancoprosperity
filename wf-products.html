@@ -28,6 +28,18 @@
                         "eco-green": "#2d6a4f",
                     },
                     fontFamily: { sans: ["IBM Plex Sans Thai", "IBM Plex Sans", "sans-serif"] },
+                    fontSize: {
+                        xs: ['13px', { lineHeight: '18px' }],
+                        sm: ['15px', { lineHeight: '22px' }],
+                        base: ['17px', { lineHeight: '26px' }],
+                        lg: ['19px', { lineHeight: '28px' }],
+                        xl: ['21px', { lineHeight: '30px' }],
+                        '2xl': ['26px', { lineHeight: '34px' }],
+                        '3xl': ['32px', { lineHeight: '40px' }],
+                        '4xl': ['40px', { lineHeight: '48px' }],
+                        '5xl': ['50px', { lineHeight: '1' }],
+                        '6xl': ['62px', { lineHeight: '1' }],
+                    }
                 }
             }
         }
@@ -47,7 +59,7 @@
         .page-hero {
             background-image:
                 linear-gradient(rgba(14, 12, 43, 0.93), rgba(14, 12, 43, 0.97)),
-                url('https://placehold.co/1920x1080/1e293b/08b8e9?text=Contact+Hero+Background');
+                url('images/factory_hero.png');
             background-size: cover;
             background-position: center;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -192,7 +204,7 @@
     </style>
 </head>
 
-<body class="antialiased bg-white text-brand-primary-dark">
+<body class="antialiased bg-white text-brand-primary-dark text-base">
 
     <div id="progress-bar" style="width:0%"></div>
 
@@ -202,9 +214,7 @@
     <nav class="nav-glass text-brand-primary-dark sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-16">
             <a href="wf-index.html" class="flex items-center gap-3 flex-shrink-0">
-                <div
-                    class="w-9 h-9 bg-gradient-to-br from-brand-gold to-brand-primary rounded-lg flex items-center justify-center font-black text-brand-primary-dark text-lg shadow-lg">
-                    P</div>
+                <img src="images/logo.png" alt="Panco Prosperity Logo" class="w-9 h-9 rounded-lg object-cover border border-brand-primary/20 bg-white">
                 <div class="leading-tight">
                     <div class="font-bold text-sm tracking-wider text-brand-primary-dark">PANCO PROSPERITY</div>
                     <div class="text-[10px] text-brand-primary-dark/80 tracking-widest uppercase">Trade Limited</div>
@@ -712,9 +722,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-5">
-                        <div
-                            class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center font-black text-lg">
-                            P</div>
+                        <img src="images/logo.png" alt="Panco Prosperity Logo" class="w-10 h-10 rounded-lg object-cover border border-brand-primary/20 bg-white">
                         <div>
                             <div class="font-bold text-lg tracking-wide text-white">PANCO PROSPERITY</div>
                             <div class="text-xs text-gray-400 font-semibold">TRADE LIMITED · ก่อตั้งปี 2544</div>

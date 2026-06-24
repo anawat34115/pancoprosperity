@@ -45,6 +45,18 @@
                         "label-md": ["JetBrains Mono", "sans-serif"],
                         "headline-md": ["IBM Plex Sans", "Prompt", "sans-serif"],
                         "headline-xl": ["IBM Plex Sans", "Prompt", "sans-serif"]
+                    },
+                    fontSize: {
+                        xs: ['13px', { lineHeight: '18px' }],
+                        sm: ['15px', { lineHeight: '22px' }],
+                        base: ['17px', { lineHeight: '26px' }],
+                        lg: ['19px', { lineHeight: '28px' }],
+                        xl: ['21px', { lineHeight: '30px' }],
+                        '2xl': ['26px', { lineHeight: '34px' }],
+                        '3xl': ['32px', { lineHeight: '40px' }],
+                        '4xl': ['40px', { lineHeight: '48px' }],
+                        '5xl': ['50px', { lineHeight: '1' }],
+                        '6xl': ['62px', { lineHeight: '1' }],
                     }
                 }
             }
@@ -63,11 +75,14 @@
         .marquee-container:hover .animate-marquee { animation-play-state: paused; }
     </style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased text-base">
     <!-- TopNavBar -->
     <nav class="bg-on-primary-fixed text-surface w-full top-0 sticky shadow-md z-50">
         <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max-width mx-auto md:px-margin-desktop px-margin-mobile">
-            <div class="text-2xl font-bold text-surface tracking-tight">PANCO PROSPERITY TRADE LTD.</div>
+            <a href="index.html" class="flex items-center space-x-3 flex-shrink-0">
+                <img src="images/logo.png" alt="Panco Prosperity Logo" class="h-10 w-10 rounded-lg object-cover border border-surface/20 bg-white">
+                <span class="text-2xl font-bold text-surface tracking-tight">PANCO PROSPERITY</span>
+            </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a class="text-tertiary-container font-bold border-b-2 border-tertiary-container pb-1" href="index.html">Home</a>
                 <a class="text-surface-variant hover:text-surface transition-colors" href="about.html">About Us</a>
@@ -103,7 +118,7 @@
                 </div>
                 <div class="md:col-span-4 relative mt-12 md:mt-0">
                     <div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden elevation-2">
-                        <img alt="Industrial lamination machinery" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1Dp2GDWX5DfSSpvBb1udS9NIpN6ky3Zjzvu31mz9cveVxaukkSAlMlTbTpGdkeSN8OfLloUwcNQ6nNJZdd7jJiNDBByjtW_5_-EvNiaXKWfZTtmbJIq9ZLY3tHSnGVgmJeN-8CzuoC5516CEyopHZxlqouKM40K28446xpmRBJwoxjdHKdvFM6LGT1q-OMEA7sH5LXxkTL8_96_uISNuR5yEb48uTrKkg7RKu-dPkRqhajbnf_C8wBlMgpVlrXg7wy1anWec3ENu"/>
+                        <img alt="Industrial lamination machinery" class="w-full h-full object-cover" src="images/IMG_6590.JPG"/>
                         <div class="absolute bottom-6 left-[-2rem] bg-white p-4 rounded-lg elevation-2 border-l-4 border-primary-container z-20 w-64 hidden md:block">
                             <div class="flex items-center space-x-3">
                                 <div class="bg-surface-container w-10 h-10 rounded flex items-center justify-center text-on-primary-fixed"><span class="material-symbols-outlined">speed</span></div>
@@ -200,7 +215,7 @@
                                 <span class="bg-white border border-outline-variant px-3 py-1 rounded text-xs font-bold text-on-surface">Nylex</span>
                             </div>
                             <div class="mt-auto h-48 bg-surface-container-high rounded overflow-hidden relative border border-outline-variant">
-                                <img alt="Technical textiles" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO98pkEQK6LMRZID8TUCdWMk6Oj-GdqvM2cC0EpvKy3_yK9bE29IlHuLwGRyTJ2xTtHC5M0Pf0o78RQZZ9oUW5deYRj2Ufr3AFtljpTZTMKj9EMUoHwT46rZW3kaLGSZe2TTnRR58hCe3m21RRAsZzjkDmwkp8OjMOg7_7UJrgsg9UJ9lE7lld93KhL-Agjnlo-irvUV3Od5aGznkWmZa0ccpGrAqdPKXlvszfHBhJX10bTkrzUvWy8U_b3RFMSPhUnjcRx2NlJfaD"/>
+                                <img alt="Technical textiles" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" src="images/IMG_6674.JPG"/>
                             </div>
                         </div>
                     </div>
@@ -418,7 +433,10 @@
     <footer class="bg-on-background text-surface border-t border-outline-variant w-full bottom-0">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 w-full max-w-container-max-width mx-auto">
             <div class="col-span-1 md:col-span-1">
-                <div class="text-xl font-bold text-surface mb-4">PANCO PROSPERITY TRADE LTD.</div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="images/logo.png" alt="Panco Prosperity Logo" class="h-10 w-10 rounded-lg object-cover border border-surface/20 bg-white">
+                    <span class="text-xl font-bold text-surface">PANCO PROSPERITY</span>
+                </div>
                 <p class="text-surface-variant text-sm mb-4">© 2024 PANCO PROSPERITY TRADE LIMITED. All Rights Reserved. ISO 9001:2008 Certified.</p>
             </div>
             <div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
